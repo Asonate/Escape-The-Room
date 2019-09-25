@@ -62,10 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ClickableObject.cs" />
-    <Compile Include="Assets\Interactor.cs" />
-    <Compile Include="Assets\RiddleHandler.cs" />
+    <Compile Include="Assets\Scripts\ClickableObject.cs" />
     <Compile Include="Assets\Scripts\GameLoader.cs" />
+    <Compile Include="Assets\Scripts\Interactor.cs" />
+    <Compile Include="Assets\Scripts\RiddleHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
