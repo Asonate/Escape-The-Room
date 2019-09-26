@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RiddleHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PauseEventHandler.cs">
     <Files>
-      <File FileName="Assets/RiddleHandler.cs" Line="8" Column="2" />
-      <File FileName="Assets/Scripts/GameLoader.cs" Line="10" Column="76" />
-      <File FileName="Assets/ClickableObject.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/RiddleHandler.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/GameLoader.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" Line="67" Column="1" />
+      <File FileName="Assets/Scripts/PauseEventHandler.cs" Line="12" Column="5" />
+      <File FileName="Assets/Scripts/SceneInformation.cs" Line="6" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
