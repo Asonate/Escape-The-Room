@@ -20,4 +20,9 @@ public class GameLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void DisplayCredits()
+    {
+        //TODO
+    }
 }
