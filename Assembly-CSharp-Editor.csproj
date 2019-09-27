@@ -323,9 +323,6 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>/Users/alex/Documents/Unity/2019.2.6f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>/Users/alex/Documents/Unity/Escape The Room/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.VR">
       <HintPath>/Users/alex/Documents/Unity/2019.2.6f1/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
     </Reference>

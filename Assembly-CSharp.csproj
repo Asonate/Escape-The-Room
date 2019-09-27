@@ -418,9 +418,6 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>/Users/alex/Documents/Unity/2019.2.6f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>/Users/alex/Documents/Unity/Escape The Room/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>/Users/alex/Documents/Unity/Escape The Room/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
