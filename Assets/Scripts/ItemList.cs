@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemList : MonoBehaviour
 {
-    public List<Item> items = new List<Item>();
+    public List<ItemTypes.Item> items = new List<ItemTypes.Item>();
 }

@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\Interactor.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\InventoryEventHandler.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\ItemObject.cs" />
     <Compile Include="Assets\Scripts\ItemTypes.cs" />

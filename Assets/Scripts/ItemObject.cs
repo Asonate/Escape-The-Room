@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemObject : ClickableObject
 {
-    [SerializeField] Item obtainedItem;
+    [SerializeField] ItemTypes.Item obtainedItem;
 
     public override Color GetColor()
     {
@@ -18,7 +18,7 @@ public class ItemObject : ClickableObject
 
     public override void Execute()
     {
-        List<Item> tempItems = FindObjectOfType<ItemList>().items;
+        List<ItemTypes.Item> tempItems = FindObjectOfType<ItemList>().items;
         tempItems.Add(obtainedItem);
 
         //display textbox

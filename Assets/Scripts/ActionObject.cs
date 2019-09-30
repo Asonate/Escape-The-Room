@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActionObject : ClickableObject
 {
-    [SerializeField] Item clearItem;
+    [SerializeField] ItemTypes.Item clearItem;
 
     public override Color GetColor()
     {
@@ -18,7 +18,7 @@ public class ActionObject : ClickableObject
 
     public override void Execute()
     {
-        List<Item> tempItems = FindObjectOfType<ItemList>().items;
+        List<ItemTypes.Item> tempItems = FindObjectOfType<ItemList>().items;
 
         if (tempItems.Contains(clearItem))
         {
