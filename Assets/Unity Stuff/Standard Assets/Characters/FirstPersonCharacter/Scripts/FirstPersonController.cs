@@ -47,6 +47,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            PlayerData data = FindObjectOfType<PlayerData>();
+            transform.position = data.playerPos;
+            transform.rotation = data.playerRot;
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;

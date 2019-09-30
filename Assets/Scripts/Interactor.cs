@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,22 +19,52 @@ public class Interactor : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            Scout();
         }
 
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Interact();
+        }
     }
 
-    void Shoot()
+    void Scout()
     {
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 25))
         {
+            GameObject hitObj = hit.transform.gameObject;
             GameObject hitFX = Instantiate(onHit, hit.point, Quaternion.LookRotation(hit.normal), gameObject.transform);
-            Destroy(hitFX, 1);
             ClickableObject target = hit.transform.GetComponent<ClickableObject>();
             if (target)
             {
-                target.LoadRiddle();
+                hitFX.GetComponent<ParticleSystem>().startColor = target.GetColor();
+                target.Highlight();
             }
+            else
+            {
+                hitFX.GetComponent<ParticleSystem>().startColor = Color.black;
+            }
+            Destroy(hitFX, 1f);
+        }
+    }
+
+    private void Interact()
+    {
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 25))
+        {
+            GameObject hitObj = hit.transform.gameObject;
+            GameObject hitFX = Instantiate(onHit, hit.point, Quaternion.LookRotation(hit.normal), gameObject.transform);
+            ClickableObject target = hit.transform.GetComponent<ClickableObject>();
+            if (target)
+            {
+                hitFX.GetComponent<ParticleSystem>().startColor = target.GetColor();
+                target.Execute();
+            }
+            else
+            {
+                hitFX.GetComponent<ParticleSystem>().startColor = Color.black;
+            }
+            Destroy(hitFX, 1f);
         }
     }
 }

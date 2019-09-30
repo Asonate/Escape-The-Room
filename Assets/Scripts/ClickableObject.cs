@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClickableObject : MonoBehaviour
+public abstract class ClickableObject : MonoBehaviour
 {
-    public void LoadRiddle()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    public abstract Color GetColor();
+
+    public abstract void Highlight();
+
+    public abstract void Execute();
 }
