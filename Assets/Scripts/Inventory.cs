@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 {
     FirstPersonController firstPersonController;
     [SerializeField] Canvas inventory;
-    bool currentlyActive;
+    public bool currentlyActive;
 
     private void Start()
     {
@@ -22,15 +22,18 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if ((currentlyActive && FindObjectOfType<PlayerData>().currentlyInMenu) || !FindObjectOfType<PlayerData>().currentlyInMenu)
         {
-            if (currentlyActive)
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                DisableInventory();
-            }
-            else
-            {
-                EnableInventory();
+                if (currentlyActive)
+                {
+                    DisableInventory();
+                }
+                else
+                {
+                    EnableInventory();
+                }
             }
         }
     }
@@ -52,6 +55,7 @@ public class Inventory : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         currentlyActive = true;
+        FindObjectOfType<PlayerData>().currentlyInMenu = true;
     }
 
     public void DisableInventory()
@@ -68,5 +72,6 @@ public class Inventory : MonoBehaviour
         }
         Time.timeScale = 1;
         currentlyActive = false;
+        FindObjectOfType<PlayerData>().currentlyInMenu = false;
     }
 }

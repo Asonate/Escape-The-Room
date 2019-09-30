@@ -30,7 +30,7 @@ public class Interactor : MonoBehaviour
 
     void Scout()
     {
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 25))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 15))
         {
             GameObject hitObj = hit.transform.gameObject;
             GameObject hitFX = Instantiate(onHit, hit.point, Quaternion.LookRotation(hit.normal), gameObject.transform);
@@ -50,21 +50,13 @@ public class Interactor : MonoBehaviour
 
     private void Interact()
     {
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 25))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 5))
         {
-            GameObject hitObj = hit.transform.gameObject;
-            GameObject hitFX = Instantiate(onHit, hit.point, Quaternion.LookRotation(hit.normal), gameObject.transform);
             ClickableObject target = hit.transform.GetComponent<ClickableObject>();
             if (target)
             {
-                hitFX.GetComponent<ParticleSystem>().startColor = target.GetColor();
                 target.Execute();
             }
-            else
-            {
-                hitFX.GetComponent<ParticleSystem>().startColor = Color.black;
-            }
-            Destroy(hitFX, 1f);
         }
     }
 }

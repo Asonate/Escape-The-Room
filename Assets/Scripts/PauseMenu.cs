@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     FirstPersonController firstPersonController;
     [SerializeField] Canvas pauseCanvas;
-    bool currentlyActive;
+    public bool currentlyActive;
 
     private void Awake()
     {
@@ -34,15 +34,18 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+        if ((currentlyActive && FindObjectOfType<PlayerData>().currentlyInMenu) || !FindObjectOfType<PlayerData>().currentlyInMenu)
         {
-            if(currentlyActive)
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                DisablePauseMenu();
-            }
-            else
-            {
-                EnablePauseMenu();
+                if (currentlyActive)
+                {
+                    DisablePauseMenu();
+                }
+                else
+                {
+                    EnablePauseMenu();
+                }
             }
         }
     }
@@ -64,6 +67,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         currentlyActive = true;
+        FindObjectOfType<PlayerData>().currentlyInMenu = true;
     }
 
     public void DisablePauseMenu()
@@ -80,5 +84,6 @@ public class PauseMenu : MonoBehaviour
         }
         Time.timeScale = 1;
         currentlyActive = false;
+        FindObjectOfType<PlayerData>().currentlyInMenu = false;
     }
 }
