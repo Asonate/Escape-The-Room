@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class ActionObject : ClickableObject
 {
-    [SerializeField] ItemTypes.Item clearItem;
+    [SerializeField] string[] requirements;
     FirstPersonController firstPersonController;
     Canvas canvas;
     Image image;
@@ -26,7 +26,7 @@ public class ActionObject : ClickableObject
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
-        foreach(Text t in texts) t.gameObject.SetActive(false);
+        foreach (Text t in texts) t.gameObject.SetActive(false);
     }
 
     public override Color GetColor()
@@ -49,11 +49,38 @@ public class ActionObject : ClickableObject
 
     private IEnumerator DisplayMessage()
     {
-        List<ItemTypes.Item> tempItems = FindObjectOfType<ItemList>().items;
+        bool requirementsMet = true;
 
-        if (tempItems.Contains(clearItem))
+        foreach (string s in requirements)
         {
-            tempItems.Remove(clearItem);
+            if (requirementsMet)
+            {
+                foreach (Item i in FindObjectOfType<Inventory>().items)
+                {
+                    if (i.name.Equals(s))
+                    {
+                        requirementsMet = true;
+                        break;
+                    }
+                    requirementsMet = false;
+                }
+            }
+        }
+
+        if (requirementsMet)
+        {
+            foreach (string s in requirements)
+            {
+                foreach (Item i in FindObjectOfType<Inventory>().items)
+                {
+                    if (i.name.Equals(s))
+                    {
+                        FindObjectOfType<Inventory>().items.Remove(i);
+                    }
+                }
+
+            }            
+
             //execute action
 
             FindObjectOfType<PlayerData>().currentlyInMenu = true;
@@ -89,8 +116,8 @@ public class ActionObject : ClickableObject
             }
             Time.timeScale = 1;
 
-            image.gameObject.SetActive(true);
-            canvas.gameObject.SetActive(true);
+            image.gameObject.SetActive(false);
+            canvas.gameObject.SetActive(false);
 
             FindObjectOfType<PlayerData>().currentlyInMenu = false;
         }
@@ -143,9 +170,9 @@ public class ActionObject : ClickableObject
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
             {
-                done = true; // breaks the loop
+                done = true;
             }
-            yield return null; // wait until next frame, then continue execution from here (loop continues)
+            yield return null;
         }
     }
 }

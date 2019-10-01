@@ -94,9 +94,9 @@ public class MessageObject : ClickableObject
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
             {
-                done = true; // breaks the loop
+                done = true;
             }
-            yield return null; // wait until next frame, then continue execution from here (loop continues)
+            yield return null;
         }
     }
 }

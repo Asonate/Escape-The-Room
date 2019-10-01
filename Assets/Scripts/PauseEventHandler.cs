@@ -12,6 +12,7 @@ public class PauseEventHandler : MonoBehaviour
 
     public void RestartGame()
     {
+        FindObjectOfType<PlayerData>().Start();
         SceneManager.LoadScene(1);
     }
 

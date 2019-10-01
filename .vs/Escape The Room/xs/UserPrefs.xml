@@ -3,15 +3,15 @@
     <Files>
       <File FileName="Assets/Scripts/GameLoader.cs" Line="13" Column="1" />
       <File FileName="Assets/Scripts/Interactor.cs" Line="52" Column="6" />
-      <File FileName="Assets/Scripts/Inventory.cs" Line="75" Column="25" />
-      <File FileName="Assets/Scripts/ActionObject.cs" Line="135" Column="68" />
-      <File FileName="Assets/Scripts/MessageObject.cs" Line="87" Column="64" />
-      <File FileName="Assets/Scripts/PuzzleObject.cs" Line="93" Column="64" />
-      <File FileName="Assets/Scripts/ItemObject.cs" Line="91" Column="64" />
-      <File FileName="Assets/Scripts/PlayerData.cs" Line="9" Column="33" />
-      <File FileName="Assets/Scripts/ItemTypes.cs" Line="10" Column="5" />
-      <File FileName="Assets/Scripts/ItemList.cs" Line="7" Column="68" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="16" Column="34" />
+      <File FileName="Assets/Scripts/ActionObject.cs" Line="76" Column="56" />
+      <File FileName="Assets/Scripts/MessageObject.cs" Line="97" Column="29" />
+      <File FileName="Assets/Scripts/PuzzleObject.cs" Line="105" Column="29" />
+      <File FileName="Assets/Scripts/ItemObject.cs" Line="62" Column="10" />
+      <File FileName="Assets/Scripts/PlayerData.cs" Line="11" Column="11" />
       <File FileName="Assets/Scripts/PauseMenu.cs" Line="38" Column="10" />
+      <File FileName="Assets/Scripts/Item.cs" Line="14" Column="30" />
+      <File FileName="Assets/Scripts/PauseEventHandler.cs" Line="15" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />

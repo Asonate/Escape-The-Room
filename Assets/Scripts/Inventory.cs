@@ -6,9 +6,15 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Inventory : MonoBehaviour
 {
-    FirstPersonController firstPersonController;
+    public List<Item> items;
     [SerializeField] Canvas inventory;
+    FirstPersonController firstPersonController;
     public bool currentlyActive;
+
+    private void Awake()
+    {
+        items = new List<Item>();
+    }
 
     private void Start()
     {

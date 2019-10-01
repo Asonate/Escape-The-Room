@@ -6,7 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class ItemObject : ClickableObject
 {
-    [SerializeField] ItemTypes.Item obtainedItem;
+    [SerializeField] string[] itemNames;
+    [SerializeField] Sprite[] itemSprites;
     FirstPersonController firstPersonController;
     Canvas canvas;
     Image image;
@@ -27,6 +28,8 @@ public class ItemObject : ClickableObject
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
         foreach (Text t in texts) t.gameObject.SetActive(false);
+
+
     }
 
     public override Color GetColor()
@@ -49,8 +52,15 @@ public class ItemObject : ClickableObject
 
     private IEnumerator DisplayMessage()
     {
-        List<ItemTypes.Item> tempItems = FindObjectOfType<ItemList>().items;
-        tempItems.Add(obtainedItem);
+        List<Item> inventory = FindObjectOfType<Inventory>().items;
+        if (itemNames.Length == itemSprites.Length)
+        {
+            for (int i = 0; i < itemNames.Length; i++)
+            {
+                Item tempItem = new Item(itemNames[i], itemSprites[i]);
+                inventory.Add(tempItem);
+            }
+        }
 
         FindObjectOfType<PlayerData>().currentlyInMenu = true;
 
@@ -85,8 +95,8 @@ public class ItemObject : ClickableObject
         }
         Time.timeScale = 1;
 
-        image.gameObject.SetActive(true);
-        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
 
         FindObjectOfType<PlayerData>().currentlyInMenu = false;
     }
@@ -98,9 +108,9 @@ public class ItemObject : ClickableObject
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
             {
-                done = true; // breaks the loop
+                done = true;
             }
-            yield return null; // wait until next frame, then continue execution from here (loop continues)
+            yield return null;
         }
     }
 }
