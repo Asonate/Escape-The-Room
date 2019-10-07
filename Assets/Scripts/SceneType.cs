@@ -2,5 +2,5 @@
 {
     Menu,
     Room,
-    Riddle
+    Puzzle
 }

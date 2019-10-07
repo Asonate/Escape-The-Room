@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Room 1.unity
     guid: 5a9154e1a6fe34467a91c02cbd68ce21
   - enabled: 1
-    path: Assets/Scenes/Riddle 1.unity
+    path: Assets/Scenes/Puzzle 1.unity
     guid: 5eadd5cb91d9c4dedbc15a11a6b46e1d
   - enabled: 1
     path: Assets/Scenes/Main Room 2.unity

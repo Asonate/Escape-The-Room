@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\Puzzles\1\Bucket.cs" />
+    <Compile Include="Assets\Puzzles\1\BucketOuter.cs" />
+    <Compile Include="Assets\Puzzles\1\PuzzleOne.cs" />
     <Compile Include="Assets\Scripts\ActionObject.cs" />
     <Compile Include="Assets\Scripts\ClickableObject.cs" />
     <Compile Include="Assets\Scripts\GameLoader.cs" />
@@ -76,7 +79,6 @@
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PuzzleObject.cs" />
-    <Compile Include="Assets\Scripts\RiddleHandler.cs" />
     <Compile Include="Assets\Scripts\SceneInformation.cs" />
     <Compile Include="Assets\Scripts\SceneType.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
