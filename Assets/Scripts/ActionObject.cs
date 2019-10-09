@@ -4,30 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class ActionObject : ClickableObject
+public class ActionObject : MessageObject
 {
-    [SerializeField] string[] requirements;
+    [SerializeField] int[] requirements;
     FirstPersonController firstPersonController;
     Canvas canvas;
     Image image;
     Text[] texts;
-
-    private void Start()
-    {
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
-
-        canvas = GetComponentInChildren<Canvas>();
-        image = GetComponentInChildren<Image>();
-        texts = GetComponentsInChildren<Text>();
-
-        canvas.gameObject.SetActive(false);
-        image.gameObject.SetActive(false);
-        foreach (Text t in texts) t.gameObject.SetActive(false);
-    }
 
     public override Color GetColor()
     {
@@ -41,138 +24,47 @@ public class ActionObject : ClickableObject
 
     public override void Execute()
     {
-        if (!FindObjectOfType<PlayerData>().currentlyInMenu)
+        if (!PlayerData.currentlyInMenu)
         {
-            StartCoroutine(DisplayMessage());
+            StartCoroutine(ObjectAction());
         }
     }
 
-    private IEnumerator DisplayMessage()
+    public override IEnumerator ObjectAction()
     {
         bool requirementsMet = true;
 
-        foreach (string s in requirements)
+        foreach (int i in requirements)
         {
-            if (requirementsMet)
+            if (requirementsMet && Inventory.items.Length > i)
             {
-                foreach (Item i in FindObjectOfType<Inventory>().items)
+                if (Inventory.items[i].amount > 0)
                 {
-                    if (i.name.Equals(s))
-                    {
-                        requirementsMet = true;
-                        break;
-                    }
-                    requirementsMet = false;
+                    requirementsMet = true;
+                    yield break;
                 }
+                requirementsMet = false;
             }
         }
 
         if (requirementsMet)
         {
-            foreach (string s in requirements)
+            foreach (int i in requirements)
             {
-                foreach (Item i in FindObjectOfType<Inventory>().items)
-                {
-                    if (i.name.Equals(s))
-                    {
-                        FindObjectOfType<Inventory>().items.Remove(i);
-                    }
-                }
-
-            }            
+                Inventory.items[i].amount--;
+            }
 
             //execute action
 
-            FindObjectOfType<PlayerData>().currentlyInMenu = true;
-
-            canvas.gameObject.SetActive(true);
-            image.gameObject.SetActive(true);
-
-            if (firstPersonController)
-            {
-                firstPersonController.mouseLookEnabled = false;
-            }
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
-
-            foreach (Text t in texts)
-            {
-                t.gameObject.SetActive(true);
-
-                yield return WaitForPlayerInput();
-
-                t.gameObject.SetActive(false);
-            }
-
-            if (firstPersonController)
-            {
-                firstPersonController.mouseLookEnabled = true;
-            }
-            if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = false;
-            }
-            Time.timeScale = 1;
-
-            image.gameObject.SetActive(false);
-            canvas.gameObject.SetActive(false);
-
-            FindObjectOfType<PlayerData>().currentlyInMenu = false;
+            PlayerData.currentlyInMenu = true;
+            yield return StartCoroutine(DisplayMessage());
+            PlayerData.currentlyInMenu = false;
         }
         else
         {
-            FindObjectOfType<PlayerData>().currentlyInMenu = true;
-
-            canvas.gameObject.SetActive(true);
-            image.gameObject.SetActive(true);
-
-            if (firstPersonController)
-            {
-                firstPersonController.mouseLookEnabled = false;
-            }
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
-
-            foreach (Text t in texts)
-            {
-                t.gameObject.SetActive(true);
-
-                yield return WaitForPlayerInput();
-
-                t.gameObject.SetActive(false);
-            }
-
-            if (firstPersonController)
-            {
-                firstPersonController.mouseLookEnabled = true;
-            }
-            if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = false;
-            }
-            Time.timeScale = 1;
-
-            image.gameObject.SetActive(true);
-            canvas.gameObject.SetActive(true);
-
-            FindObjectOfType<PlayerData>().currentlyInMenu = false;
-        }
-    }
-
-    private IEnumerator WaitForPlayerInput()
-    {
-        bool done = false;
-        while (!done)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
-            {
-                done = true;
-            }
-            yield return null;
+            PlayerData.currentlyInMenu = true;
+            yield return StartCoroutine(DisplayMessage());
+            PlayerData.currentlyInMenu = false;
         }
     }
 }

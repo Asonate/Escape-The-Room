@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public Vector3 playerPos;
-    public Quaternion playerRot;
-    public bool currentlyInMenu;
+    public static Vector3 playerPos;
+    public static Quaternion playerRot;
+    public static bool currentlyInMenu;
 
     public void Start()
     {

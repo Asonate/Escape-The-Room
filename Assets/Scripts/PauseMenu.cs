@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if ((currentlyActive && FindObjectOfType<PlayerData>().currentlyInMenu) || !FindObjectOfType<PlayerData>().currentlyInMenu)
+        if ((currentlyActive && PlayerData.currentlyInMenu) || !PlayerData.currentlyInMenu)
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         currentlyActive = true;
-        FindObjectOfType<PlayerData>().currentlyInMenu = true;
+        PlayerData.currentlyInMenu = true;
     }
 
     public void DisablePauseMenu()
@@ -84,6 +84,6 @@ public class PauseMenu : MonoBehaviour
         }
         Time.timeScale = 1;
         currentlyActive = false;
-        FindObjectOfType<PlayerData>().currentlyInMenu = false;
+        PlayerData.currentlyInMenu = false;
     }
 }

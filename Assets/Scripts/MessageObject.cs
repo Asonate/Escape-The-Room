@@ -11,7 +11,7 @@ public class MessageObject : ClickableObject
     Image image;
     Text[] texts;
 
-    private void Start()
+    public void Start()
     {
         firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
@@ -40,16 +40,21 @@ public class MessageObject : ClickableObject
 
     public override void Execute()
     {
-        if (!FindObjectOfType<PlayerData>().currentlyInMenu)
+        if (!PlayerData.currentlyInMenu)
         {
-            StartCoroutine(DisplayMessage());
+            StartCoroutine(ObjectAction());
         }
     }
 
-    private IEnumerator DisplayMessage()
+    public virtual IEnumerator ObjectAction()
     {
-        FindObjectOfType<PlayerData>().currentlyInMenu = true;
+        PlayerData.currentlyInMenu = true;
+        yield return DisplayMessage();
+        PlayerData.currentlyInMenu = false;
+    }
 
+    public IEnumerator DisplayMessage()
+    {
         canvas.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
 
@@ -83,11 +88,9 @@ public class MessageObject : ClickableObject
 
         image.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);
-
-        FindObjectOfType<PlayerData>().currentlyInMenu = false;
     }
 
-    private IEnumerator WaitForPlayerInput()
+    public IEnumerator WaitForPlayerInput()
     {
         bool done = false;
         while (!done)

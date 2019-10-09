@@ -2,22 +2,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Item> items;
+    public static Item[] items;
+    public Item[] itemsSetup;
     [SerializeField] Canvas inventory;
     FirstPersonController firstPersonController;
     public bool currentlyActive;
 
-    private void Awake()
+    [System.Serializable]
+    public class Item
     {
-        items = new List<Item>();
+        public new string name;
+        public int amount;
+        public Image image;
+
+        public Item(string name, Image image)
+        {
+            this.name = name;
+            this.amount = 0;
+            this.image = image;
+        }
     }
 
     private void Start()
     {
+        items = itemsSetup;
         firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
@@ -28,7 +41,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if ((currentlyActive && FindObjectOfType<PlayerData>().currentlyInMenu) || !FindObjectOfType<PlayerData>().currentlyInMenu)
+        if ((currentlyActive && PlayerData.currentlyInMenu) || !PlayerData.currentlyInMenu)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -61,7 +74,7 @@ public class Inventory : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         currentlyActive = true;
-        FindObjectOfType<PlayerData>().currentlyInMenu = true;
+        PlayerData.currentlyInMenu = true;
     }
 
     public void DisableInventory()
@@ -78,6 +91,6 @@ public class Inventory : MonoBehaviour
         }
         Time.timeScale = 1;
         currentlyActive = false;
-        FindObjectOfType<PlayerData>().currentlyInMenu = false;
+        PlayerData.currentlyInMenu = false;
     }
 }

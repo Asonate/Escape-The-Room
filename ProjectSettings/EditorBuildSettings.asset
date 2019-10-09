@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle 1.unity
     guid: 5eadd5cb91d9c4dedbc15a11a6b46e1d
-  - enabled: 1
-    path: Assets/Scenes/Main Room 2.unity
-    guid: 4f2d3a367fd7248ef84b938d0bef33bc
-  - enabled: 1
-    path: Assets/Scenes/Riddle 2.unity
-    guid: aab091e31f7c846f085f83f4d22b915b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
