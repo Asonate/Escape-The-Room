@@ -6,12 +6,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class MessageObject : ClickableObject
 {
-    FirstPersonController firstPersonController;
-    Canvas canvas;
-    Image image;
-    Text[] texts;
+    protected FirstPersonController firstPersonController;
+    protected Canvas canvas;
+    protected Image image;
+    protected Text[] texts;
 
-    public void Start()
+    public virtual void Start()
     {
         firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
@@ -19,9 +19,9 @@ public class MessageObject : ClickableObject
             firstPersonController.mouseLookEnabled = true;
         }
 
-        canvas = GetComponentInChildren<Canvas>();
-        image = GetComponentInChildren<Image>();
-        texts = GetComponentsInChildren<Text>();
+        canvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
+        image = canvas.GetComponentInChildren<Image>(true);
+        texts = canvas.GetComponentsInChildren<Text>(true);
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);

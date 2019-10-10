@@ -6,12 +6,14 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class ItemObject : MessageObject
 {
-    [SerializeField] int[] items;
-    FirstPersonController firstPersonController;
-    Canvas canvas;
-    Image image;
-    Text[] texts;
+    [SerializeField] AddedItem[] addedItems;
 
+    [System.Serializable]
+    public class AddedItem
+    {
+        public int index;
+        public int amount;
+    }
     public override Color GetColor()
     {
         return Color.blue;
@@ -32,9 +34,9 @@ public class ItemObject : MessageObject
 
     public override IEnumerator ObjectAction()
     {
-        foreach (int i in items)
+        foreach (AddedItem a in addedItems)
         {
-            if(Inventory.items.Length > i) Inventory.items[i].amount++;
+            if(Inventory.items.Length > a.index) Inventory.items[a.index].amount += a.amount;
         }
 
         PlayerData.currentlyInMenu = true;

@@ -6,11 +6,46 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class ActionObject : MessageObject
 {
-    [SerializeField] int[] requirements;
-    FirstPersonController firstPersonController;
-    Canvas canvas;
-    Image image;
-    Text[] texts;
+    [SerializeField] Requirement[] requirements;
+    Canvas normCanvas;
+    Image normImage;
+    Text[] normTexts;
+    Canvas altCanvas;
+    Image altImage;
+    Text[] altTexts;
+
+    [System.Serializable]
+    public class Requirement
+    {
+        public int index;
+        public int amount;
+    }
+
+    public override void Start()
+    {
+        firstPersonController = FindObjectOfType<FirstPersonController>();
+        if (firstPersonController)
+        {
+            firstPersonController.mouseLookEnabled = true;
+        }
+
+        normCanvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
+        normImage = normCanvas.GetComponentInChildren<Image>(true);
+        normTexts = normCanvas.GetComponentsInChildren<Text>(true);
+
+        normCanvas.gameObject.SetActive(false);
+        normImage.gameObject.SetActive(false);
+        foreach (Text t in normTexts) t.gameObject.SetActive(false);
+
+        altCanvas = gameObject.transform.Find("Alternate Textbox Canvas").GetComponent<Canvas>();
+        altImage = altCanvas.GetComponentInChildren<Image>(true);
+        altTexts = altCanvas.GetComponentsInChildren<Text>(true);
+
+        altCanvas.gameObject.SetActive(false);
+        altImage.gameObject.SetActive(false);
+        foreach (Text t in altTexts) t.gameObject.SetActive(false);
+
+    }
 
     public override Color GetColor()
     {
@@ -34,37 +69,43 @@ public class ActionObject : MessageObject
     {
         bool requirementsMet = true;
 
-        foreach (int i in requirements)
+        foreach (Requirement r in requirements)
         {
-            if (requirementsMet && Inventory.items.Length > i)
+            if (requirementsMet && Inventory.items.Length > r.index)
             {
-                if (Inventory.items[i].amount > 0)
+                if (Inventory.items[r.index].amount >= r.amount)
                 {
                     requirementsMet = true;
-                    yield break;
                 }
-                requirementsMet = false;
+                else
+                {
+                    requirementsMet = false;
+                }
             }
         }
 
         if (requirementsMet)
         {
-            foreach (int i in requirements)
+            foreach (Requirement r in requirements)
             {
-                Inventory.items[i].amount--;
+                Inventory.items[r.index].amount -= r.amount;
             }
 
             //execute action
 
-            PlayerData.currentlyInMenu = true;
-            yield return StartCoroutine(DisplayMessage());
-            PlayerData.currentlyInMenu = false;
+            canvas = normCanvas;
+            image = normImage;
+            texts = normTexts;
         }
         else
         {
-            PlayerData.currentlyInMenu = true;
-            yield return StartCoroutine(DisplayMessage());
-            PlayerData.currentlyInMenu = false;
+            canvas = altCanvas;
+            image = altImage;
+            texts = altTexts;
         }
+
+        PlayerData.currentlyInMenu = true;
+        yield return StartCoroutine(DisplayMessage());
+        PlayerData.currentlyInMenu = false;
     }
 }

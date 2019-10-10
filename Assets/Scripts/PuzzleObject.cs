@@ -8,10 +8,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PuzzleObject : MessageObject
 {
     [SerializeField] int puzzleSceneIndex;
-    FirstPersonController firstPersonController;
-    Canvas canvas;
-    Image image;
-    Text[] texts;
 
     public override Color GetColor()
     {

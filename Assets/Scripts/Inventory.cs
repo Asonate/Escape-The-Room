@@ -65,6 +65,12 @@ public class Inventory : MonoBehaviour
 
     private void EnableInventory()
     {
+        foreach(Item i in items)
+        {
+            i.image.transform.Find("Name").GetComponent<Text>().text = i.name;
+            i.image.transform.Find("Amount").GetComponent<Text>().text = i.amount.ToString();
+        }
+
         inventory.gameObject.SetActive(true);
         if (firstPersonController)
         {
