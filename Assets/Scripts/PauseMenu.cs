@@ -12,18 +12,16 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (FindObjectsOfType<PauseMenu>().Length > 1)
+        if (transform.root.gameObject.GetComponentsInChildren<PauseMenu>(true).Length > 1)
         {
             Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
         }
     }
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
@@ -53,7 +51,6 @@ public class PauseMenu : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         DisablePauseMenu();
-        Start();
     }
 
     private void EnablePauseMenu()

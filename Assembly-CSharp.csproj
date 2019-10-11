@@ -75,13 +75,16 @@
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\InventoryEventHandler.cs" />
     <Compile Include="Assets\Scripts\ItemObject.cs" />
+    <Compile Include="Assets\Scripts\LoadRoom.cs" />
     <Compile Include="Assets\Scripts\MessageObject.cs" />
+    <Compile Include="Assets\Scripts\NoReload.cs" />
     <Compile Include="Assets\Scripts\PauseEventHandler.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PuzzleObject.cs" />
     <Compile Include="Assets\Scripts\SceneInformation.cs" />
     <Compile Include="Assets\Scripts\SceneType.cs" />
+    <Compile Include="Assets\Scripts\SystemProperties.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />

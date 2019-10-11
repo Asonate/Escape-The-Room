@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     [System.Serializable]
     public class Item
     {
-        public new string name;
+        public string name;
         public int amount;
         public Image image;
 

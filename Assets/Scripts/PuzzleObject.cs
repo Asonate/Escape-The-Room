@@ -8,6 +8,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PuzzleObject : MessageObject
 {
     [SerializeField] int puzzleSceneIndex;
+    bool canDestroy;
+
+    private void OnEnable()
+    {
+        if (canDestroy) Destroy(gameObject);
+    }
 
     public override Color GetColor()
     {
@@ -33,11 +39,9 @@ public class PuzzleObject : MessageObject
         yield return StartCoroutine(DisplayMessage());
         PlayerData.currentlyInMenu = false;
 
-        PlayerData.playerPos = firstPersonController.transform.position;
-        PlayerData.playerRot = firstPersonController.transform.rotation;
+        canDestroy = true;
+        FindObjectOfType<LoadRoom>().gameObject.SetActive(false);
 
         SceneManager.LoadScene(puzzleSceneIndex);
-
-        Destroy(this);
     }
 }

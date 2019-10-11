@@ -57,7 +57,15 @@ public class CheckAnswer : MonoBehaviour
         yield return WaitForPlayerInput();
         text.gameObject.SetActive(false);
 
-        SceneManager.LoadScene(PuzzleOne.CheckAnswer() ? 1 : 2);
+        if(PuzzleOne.CheckAnswer())
+        {
+            NoReload.EnableRoom();
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public IEnumerator WaitForPlayerInput()
