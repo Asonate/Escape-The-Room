@@ -10,8 +10,8 @@ public class PlayerData : MonoBehaviour
 
     public void Start()
     {
-    playerPos = new Vector3(0, 0, 0);
-    playerRot = Quaternion.identity;
-    currentlyInMenu = false;
+        playerPos = new Vector3(0, 0, 0);
+        playerRot = Quaternion.identity;
+        currentlyInMenu = false;
     }
 }

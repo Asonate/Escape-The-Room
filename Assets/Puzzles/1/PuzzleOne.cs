@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PuzzleOne : MonoBehaviour
 {
     public static int maxCapacity = 10;
-    List<Bucket> buckets;
+    static List<Bucket> buckets;
 
     public static bool firstSelected;
     public static Bucket first;
@@ -30,25 +31,16 @@ public class PuzzleOne : MonoBehaviour
                 }
             }
         }
-        foreach (Bucket b in buckets)
-            b.UpdateLabel();
+        foreach (Bucket b in buckets) b.UpdateLabel();
     }
 
-    public void CheckAnswer()
+    public static bool CheckAnswer()
     {
         int count = 0;
         foreach (Bucket b in buckets)
         {
             if (b.current == maxCapacity / 2) count++;
         }
-        if (count == 2)
-        {
-            //Display Textbox
-            //Load Room again
-        }
-        else
-        {
-            //Display Textbox
-        }
+        return count == 2;
     }
 }

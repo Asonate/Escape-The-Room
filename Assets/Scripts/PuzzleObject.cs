@@ -29,13 +29,15 @@ public class PuzzleObject : MessageObject
 
     public override IEnumerator ObjectAction()
     {
-        PlayerData.playerPos = FindObjectOfType<FirstPersonController>().transform.position;
-        PlayerData.playerRot = FindObjectOfType<FirstPersonController>().transform.rotation;
-
         PlayerData.currentlyInMenu = true;
         yield return StartCoroutine(DisplayMessage());
         PlayerData.currentlyInMenu = false;
 
+        PlayerData.playerPos = firstPersonController.transform.position;
+        PlayerData.playerRot = firstPersonController.transform.rotation;
+
         SceneManager.LoadScene(puzzleSceneIndex);
+
+        Destroy(this);
     }
 }

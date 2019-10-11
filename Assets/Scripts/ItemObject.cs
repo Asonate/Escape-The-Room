@@ -14,6 +14,7 @@ public class ItemObject : MessageObject
         public int index;
         public int amount;
     }
+
     public override Color GetColor()
     {
         return Color.blue;
@@ -42,5 +43,7 @@ public class ItemObject : MessageObject
         PlayerData.currentlyInMenu = true;
         yield return StartCoroutine(DisplayMessage());
         PlayerData.currentlyInMenu = false;
+
+        Destroy(this);
     }
 }

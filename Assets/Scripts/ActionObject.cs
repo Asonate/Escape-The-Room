@@ -107,5 +107,7 @@ public class ActionObject : MessageObject
         PlayerData.currentlyInMenu = true;
         yield return StartCoroutine(DisplayMessage());
         PlayerData.currentlyInMenu = false;
+
+        if (requirementsMet) Destroy(this);
     }
 }

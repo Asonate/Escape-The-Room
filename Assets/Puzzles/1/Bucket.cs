@@ -36,7 +36,7 @@ public class Bucket : MonoBehaviour
 
     private void Start()
     {
-        startScale = new Vector3(0.1f * capacity, 0.1f * capacity, 0.1f * capacity);
+        startScale = new Vector3(0.1f * 7, 0.1f * capacity, 0.1f * capacity);
         Vector3 startPos = transform.position;
         transform.position = new Vector3(startPos.x, startPos.y - (PuzzleOne.maxCapacity * .01f) + (capacity * .01f), startPos.z);
         UpdateLabel();

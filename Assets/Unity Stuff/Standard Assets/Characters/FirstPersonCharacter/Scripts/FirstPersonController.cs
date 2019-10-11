@@ -44,9 +44,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        /*private void OnLevelWasLoaded(int level)
+        {
+            if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = false;
+
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                GetComponentInChildren<Camera>().gameObject.SetActive(true);
+            }
+        }*/
+
         // Use this for initialization
         private void Start()
         {
+            //DontDestroyOnLoad(gameObject);
+
             transform.position = PlayerData.playerPos;
             transform.rotation = PlayerData.playerRot;
 

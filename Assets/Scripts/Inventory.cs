@@ -60,7 +60,6 @@ public class Inventory : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         DisableInventory();
-        Start();
     }
 
     private void EnableInventory()
