@@ -35,7 +35,7 @@ public class MessageObject : ClickableObject
 
     public override Color GetColor()
     {
-        return Color.yellow;
+        return Color.grey;
     }
 
     public override void Highlight()

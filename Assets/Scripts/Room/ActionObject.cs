@@ -8,6 +8,8 @@ public class ActionObject : MessageObject
 {
     [SerializeField] Requirement[] requirements;
     [SerializeField] int objectIndex;
+    [SerializeField] GameObject objectToRemove;
+    [SerializeField] GameObject objectToSpawn;
 
     Canvas normCanvas;
     Image normImage;
@@ -28,6 +30,8 @@ public class ActionObject : MessageObject
         if (PlayerData.clickedObjects.Contains(objectIndex))
         {
             Start();
+            objectToSpawn.SetActive(true);
+            objectToRemove.SetActive(false);
             Destroy(this);
         }
     }
@@ -39,6 +43,8 @@ public class ActionObject : MessageObject
         {
             firstPersonController.mouseLookEnabled = true;
         }
+
+        objectToSpawn.SetActive(false);
 
         normCanvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
         normImage = normCanvas.GetComponentInChildren<Image>(true);
@@ -102,7 +108,8 @@ public class ActionObject : MessageObject
                 Inventory.items[r.index].amount -= r.amount;
             }
 
-            //execute action
+            objectToSpawn.SetActive(true);
+            objectToRemove.SetActive(false);
 
             canvas = normCanvas;
             image = normImage;
