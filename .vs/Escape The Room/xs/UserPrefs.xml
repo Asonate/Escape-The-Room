@@ -1,21 +1,14 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room/PuzzleObject.cs">
     <Files>
-      <File FileName="Assets/Scripts/Inventory.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/MessageObject.cs" Line="61" Column="34" />
-      <File FileName="Assets/Scripts/ActionObject.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/ItemObject.cs" Line="20" Column="27" />
-      <File FileName="Assets/Scripts/PuzzleObject.cs" Line="42" Column="27" />
-      <File FileName="Assets/Scripts/PlayerData.cs" Line="13" Column="6" />
-      <File FileName="Assets/Puzzles/1/PuzzleOne.cs" Line="25" Column="42" />
-      <File FileName="Assets/Puzzles/1/CheckAnswer.cs" Line="62" Column="35" />
-      <File FileName="Assets/Puzzles/1/ClickableField.cs" Line="25" Column="11" />
-      <File FileName="Assets/Puzzles/1/Bucket.cs" Line="39" Column="42" />
-      <File FileName="Assets/Puzzles/1/BucketOuter.cs" Line="16" Column="1" />
-      <File FileName="Assets/Scripts/SystemProperties.cs" Line="17" Column="10" />
-      <File FileName="Assets/Scripts/PauseEventHandler.cs" Line="17" Column="56" />
-      <File FileName="Assets/Scripts/NoReload.cs" Line="30" Column="45" />
-      <File FileName="Assets/Scripts/LoadRoom.cs" Line="15" Column="60" />
+      <File FileName="Assets/Scripts/Room/PuzzleObject.cs" Line="15" Column="38" />
+      <File FileName="Assets/Scripts/Room/ItemObject.cs" Line="21" Column="38" />
+      <File FileName="Assets/Scripts/Room/ActionObject.cs" Line="111" Column="38" />
+      <File FileName="Assets/Scripts/Room/MessageObject.cs" Line="25" Column="14" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="41" Column="42" />
+      <File FileName="Assets/Scripts/System/Inventory.cs" Line="44" Column="28" />
+      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="19" Column="32" />
+      <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="63" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
