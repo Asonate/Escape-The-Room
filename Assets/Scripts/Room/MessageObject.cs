@@ -14,16 +14,7 @@ public class MessageObject : ClickableObject
     public virtual void Start()
     {
         firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
 
-        HideTextBox();
-    }
-
-    protected void HideTextBox()
-    {
         canvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
         image = canvas.GetComponentInChildren<Image>(true);
         texts = canvas.GetComponentsInChildren<Text>(true);

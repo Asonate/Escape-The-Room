@@ -8,14 +8,38 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PuzzleObject : MessageObject
 {
     [SerializeField] int puzzleSceneIndex;
-    [SerializeField] int objectIndex;
+    [SerializeField] GameObject[] objectsToRemove;
+    [SerializeField] GameObject[] objectsToSpawn;
+
+    int objectIndex;
+
+    private void Awake()
+    {
+        objectIndex = PlayerData.objectIndex++;
+    }
 
     private void OnEnable()
     {
         if (PlayerData.clickedObjects.Contains(objectIndex))
         {
             Start();
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(true);
+            }
+            foreach (GameObject g in objectsToRemove)
+            {
+                g.SetActive(false);
+            }
+            gameObject.SetActive(false);
             Destroy(this);
+        }
+        else
+        {
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(false);
+            }
         }
     }
 
@@ -46,5 +70,15 @@ public class PuzzleObject : MessageObject
         PlayerData.clickedObjects.Add(objectIndex);
 
         SceneManager.LoadScene(2);
+
+        foreach (GameObject g in objectsToSpawn)
+        {
+            g.SetActive(true);
+        }
+        foreach (GameObject g in objectsToRemove)
+        {
+            g.SetActive(false);
+        }
+        gameObject.SetActive(false);
     }
 }

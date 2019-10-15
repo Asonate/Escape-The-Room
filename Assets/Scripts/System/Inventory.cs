@@ -53,10 +53,6 @@ public class Inventory : MonoBehaviour
     {
         items = itemsSetup;
         firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
         inventory.gameObject.SetActive(false);
     }
 
@@ -87,6 +83,7 @@ public class Inventory : MonoBehaviour
         }
 
         inventory.gameObject.SetActive(true);
+        firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
             firstPersonController.mouseLookEnabled = false;
@@ -101,6 +98,7 @@ public class Inventory : MonoBehaviour
     public void DisableInventory()
     {
         inventory.gameObject.SetActive(false);
+        firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
             firstPersonController.mouseLookEnabled = true;

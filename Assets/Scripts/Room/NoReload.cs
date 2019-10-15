@@ -6,6 +6,7 @@ public class NoReload : MonoBehaviour
 {
     public static NoReload n;
     public static LoadRoom loadRoom;
+    int id;
 
     void Awake()
     {
@@ -16,7 +17,7 @@ public class NoReload : MonoBehaviour
         }
         else
         {
-            DestroyImmediate(gameObject.transform.parent);
+            DestroyImmediate(gameObject);
         }
     }
 

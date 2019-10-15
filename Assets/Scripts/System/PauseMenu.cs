@@ -34,12 +34,7 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-
         firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
         pauseCanvas.gameObject.SetActive(false);
     }
 
@@ -64,6 +59,7 @@ public class PauseMenu : MonoBehaviour
     private void EnablePauseMenu()
     {
         pauseCanvas.gameObject.SetActive(true);
+        firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
             firstPersonController.mouseLookEnabled = false;
@@ -78,6 +74,7 @@ public class PauseMenu : MonoBehaviour
     public void DisablePauseMenu()
     {
         pauseCanvas.gameObject.SetActive(false);
+        firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
             firstPersonController.mouseLookEnabled = true;

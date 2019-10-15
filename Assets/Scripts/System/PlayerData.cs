@@ -9,14 +9,10 @@ public class PlayerData : MonoBehaviour
 {
     public static bool currentlyInMenu;
     public static int gamestate;
-    public static List<int> clickedObjects;
+    public static List<int> clickedObjects = new List<int>();
+    public static int objectIndex;
 
     FirstPersonController[] firstPersonControllers;
-
-    private void Awake()
-    {
-        clickedObjects = new List<int>();
-    }
 
     void OnEnable()
     {
@@ -25,14 +21,17 @@ public class PlayerData : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        firstPersonControllers = FindObjectsOfType<FirstPersonController>().OrderBy(m => m.name).ToArray();
-
-        foreach (FirstPersonController f in firstPersonControllers)
+        if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
         {
-            f.gameObject.SetActive(false);
-        }
+            firstPersonControllers = FindObjectsOfType<FirstPersonController>().OrderBy(m => m.name).ToArray();
 
-        firstPersonControllers[gamestate].gameObject.SetActive(true);
+            foreach (FirstPersonController f in firstPersonControllers)
+            {
+                f.gameObject.SetActive(false);
+            }
+
+            if(firstPersonControllers.Length >= gamestate) firstPersonControllers[gamestate].gameObject.SetActive(true);
+        }
     }
 
     void OnDisable()
@@ -40,8 +39,10 @@ public class PlayerData : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    public void Start()
+    public void ResetData()
     {
+        clickedObjects.Clear();
+        gamestate = 0;
         currentlyInMenu = false;
     }
 }

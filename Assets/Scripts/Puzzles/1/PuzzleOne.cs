@@ -16,7 +16,7 @@ public class PuzzleOne : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        PlayerData.gamestate++;
+        PlayerData.gamestate = 1;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

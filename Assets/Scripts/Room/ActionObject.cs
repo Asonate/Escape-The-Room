@@ -7,9 +7,9 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class ActionObject : MessageObject
 {
     [SerializeField] Requirement[] requirements;
-    [SerializeField] int objectIndex;
-    [SerializeField] GameObject objectToRemove;
-    [SerializeField] GameObject objectToSpawn;
+    [SerializeField] GameObject[] objectsToRemove;
+    [SerializeField] GameObject[] objectsToSpawn;
+    int objectIndex;
 
     Canvas normCanvas;
     Image normImage;
@@ -25,26 +25,39 @@ public class ActionObject : MessageObject
         public int amount;
     }
 
+    private void Awake()
+    {
+        objectIndex = PlayerData.objectIndex++;
+    }
+
     private void OnEnable()
     {
         if (PlayerData.clickedObjects.Contains(objectIndex))
         {
             Start();
-            objectToSpawn.SetActive(true);
-            objectToRemove.SetActive(false);
-            Destroy(this);
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(true);
+            }
+            foreach (GameObject g in objectsToRemove)
+            {
+                g.SetActive(false);
+            }
+            gameObject.SetActive(false);
+            //Destroy(this);
+        }
+        else
+        {
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(false);
+            }
         }
     }
 
     public override void Start()
     {
         firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
-
-        objectToSpawn.SetActive(false);
 
         normCanvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
         normImage = normCanvas.GetComponentInChildren<Image>(true);
@@ -108,9 +121,6 @@ public class ActionObject : MessageObject
                 Inventory.items[r.index].amount -= r.amount;
             }
 
-            objectToSpawn.SetActive(true);
-            objectToRemove.SetActive(false);
-
             canvas = normCanvas;
             image = normImage;
             texts = normTexts;
@@ -128,6 +138,18 @@ public class ActionObject : MessageObject
         yield return StartCoroutine(DisplayMessage());
         PlayerData.currentlyInMenu = false;
 
-        if (requirementsMet) Destroy(this);
+        if (requirementsMet)
+        {
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(true);
+            }
+            foreach (GameObject g in objectsToRemove)
+            {
+                g.SetActive(false);
+            }
+            gameObject.SetActive(false);
+            //Destroy(this);
+        }
     }
 }

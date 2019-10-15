@@ -7,7 +7,9 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class ItemObject : MessageObject
 {
     [SerializeField] AddedItem[] addedItems;
-    [SerializeField] int objectIndex;
+    [SerializeField] GameObject[] objectsToRemove;
+    [SerializeField] GameObject[] objectsToSpawn;
+    int objectIndex;
 
     [System.Serializable]
     public class AddedItem
@@ -16,12 +18,33 @@ public class ItemObject : MessageObject
         public int amount;
     }
 
+    private void Awake()
+    {
+        objectIndex = PlayerData.objectIndex++;
+    }
+
     private void OnEnable()
     {
         if (PlayerData.clickedObjects.Contains(objectIndex))
         {
             Start();
-            Destroy(this);
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(true);
+            }
+            foreach (GameObject g in objectsToRemove)
+            {
+                g.SetActive(false);
+            }
+            gameObject.SetActive(false);
+            //Destroy(this);
+        }
+        else
+        {
+            foreach (GameObject g in objectsToSpawn)
+            {
+                g.SetActive(false);
+            }
         }
     }
 
@@ -56,6 +79,15 @@ public class ItemObject : MessageObject
 
         PlayerData.clickedObjects.Add(objectIndex);
 
-        Destroy(this);
+        foreach (GameObject g in objectsToSpawn)
+        {
+            g.SetActive(true);
+        }
+        foreach (GameObject g in objectsToRemove)
+        {
+            g.SetActive(false);
+        }
+        gameObject.SetActive(false);
+        //Destroy(this);
     }
 }
