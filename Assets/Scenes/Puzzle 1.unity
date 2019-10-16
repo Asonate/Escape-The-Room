@@ -849,9 +849,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You cleared the puzzle!
+  m_Text: 'You solved the puzzle!
 
-    This earned you one key!'
+    This earned you one Key Card.
+
+    Press ''r'' to check your Inventory.'
 --- !u!222 &640291972
 CanvasRenderer:
   m_ObjectHideFlags: 0

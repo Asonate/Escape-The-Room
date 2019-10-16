@@ -12,9 +12,12 @@ public class LoadRoom : MonoBehaviour
 
     public void SetAllActive()
     {
-        foreach (Transform child in transform.Find("Room"))
+        foreach (Transform child in transform.Find("World"))
         {
-                child.gameObject.SetActive(true);
+            foreach (Transform c in child)
+            {
+                c.gameObject.SetActive(true);
+            }
         }
     }
 }
