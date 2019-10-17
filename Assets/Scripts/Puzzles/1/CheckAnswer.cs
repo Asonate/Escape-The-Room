@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CheckAnswer : MonoBehaviour
 {
     [SerializeField] AddedItem[] addedItems;
-
+    
     [System.Serializable]
     public class AddedItem
     {
@@ -59,11 +59,11 @@ public class CheckAnswer : MonoBehaviour
 
         if(PuzzleOne.CheckAnswer())
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Main");
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Puzzle 1");
         }
     }
 

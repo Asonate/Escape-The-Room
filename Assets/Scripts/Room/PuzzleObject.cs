@@ -7,7 +7,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class PuzzleObject : MessageObject
 {
-    [SerializeField] int puzzleSceneIndex;
+    [SerializeField] string puzzleName;
     [SerializeField] GameObject[] objectsToRemove;
     [SerializeField] GameObject[] objectsToSpawn;
 
@@ -69,7 +69,7 @@ public class PuzzleObject : MessageObject
 
         PlayerData.clickedObjects.Add(objectIndex);
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(puzzleName);
 
         foreach (GameObject g in objectsToSpawn)
         {

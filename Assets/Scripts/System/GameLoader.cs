@@ -13,7 +13,12 @@ public class GameLoader : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Main");
+    }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void ExitGame()

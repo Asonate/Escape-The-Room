@@ -15,11 +15,11 @@ public class PauseEventHandler : MonoBehaviour
         FindObjectOfType<PlayerData>().ResetData();
         Destroy(FindObjectOfType<SystemProperties>().gameObject);
         Destroy(FindObjectOfType<NoReload>().gameObject);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Main");
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Start");
     }
 }
