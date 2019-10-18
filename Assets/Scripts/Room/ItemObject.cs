@@ -88,6 +88,5 @@ public class ItemObject : MessageObject
             g.SetActive(false);
         }
         gameObject.SetActive(false);
-        //Destroy(this);
     }
 }

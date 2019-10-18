@@ -57,8 +57,6 @@ public class ActionObject : MessageObject
 
     public override void Start()
     {
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-
         normCanvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
         normImage = normCanvas.GetComponentInChildren<Image>(true);
         normTexts = normCanvas.GetComponentsInChildren<Text>(true);
@@ -149,7 +147,6 @@ public class ActionObject : MessageObject
                 g.SetActive(false);
             }
             gameObject.SetActive(false);
-            //Destroy(this);
         }
     }
 }

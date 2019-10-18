@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameLoader : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        try {
+            FindObjectOfType<PlayerData>().ResetData();
+            Destroy(FindObjectOfType<SystemProperties>().gameObject);
+            Destroy(FindObjectOfType<NoReload>().gameObject);
+        }
+        catch
+        {
+            print("object_not_found");
+        }
+    }
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -13,6 +26,7 @@ public class GameLoader : MonoBehaviour
 
     public void LoadGame()
     {
+
         SceneManager.LoadScene("Main");
     }
 

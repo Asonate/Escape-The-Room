@@ -1,38 +1,21 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/PauseEventHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/GameLoader.cs">
     <Files>
       <File FileName="Assets/Scripts/Room/PuzzleObject.cs" Line="72" Column="43" />
-      <File FileName="Assets/Scripts/Room/ItemObject.cs" Line="90" Column="37" />
-      <File FileName="Assets/Scripts/Room/ActionObject.cs" Line="152" Column="15" />
-      <File FileName="Assets/Scripts/Room/MessageObject.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="16" Column="5" />
+      <File FileName="Assets/Scripts/Room/ItemObject.cs" Line="91" Column="1" />
+      <File FileName="Assets/Scripts/Room/ActionObject.cs" Line="150" Column="1" />
+      <File FileName="Assets/Scripts/Room/MessageObject.cs" Line="15" Column="6" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="24" Column="1" />
       <File FileName="Assets/Scripts/System/Inventory.cs" Line="101" Column="75" />
       <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="19" Column="33" />
       <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="77" Column="75" />
       <File FileName="Assets/Scripts/System/PauseEventHandler.cs" Line="26" Column="1" />
       <File FileName="Assets/Scripts/Room/NoReload.cs" Line="19" Column="10" />
       <File FileName="Assets/Scripts/Puzzles/1/CheckAnswer.cs" Line="66" Column="46" />
-      <File FileName="Assets/Scripts/System/GameLoader.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/System/GameLoader.cs" Line="16" Column="9" />
+      <File FileName="Assets/Scripts/System/SystemProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/Interactor.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Escape The Room" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Puzzles" expanded="True">
-                  <Node name="1" expanded="True" />
-                </Node>
-                <Node name="Room" expanded="True" />
-                <Node name="System" expanded="True">
-                  <Node name="PauseEventHandler.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

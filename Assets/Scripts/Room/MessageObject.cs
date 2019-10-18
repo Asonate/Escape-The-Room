@@ -13,8 +13,6 @@ public class MessageObject : ClickableObject
 
     public virtual void Start()
     {
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-
         canvas = gameObject.transform.Find("Textbox Canvas").GetComponent<Canvas>();
         image = canvas.GetComponentInChildren<Image>(true);
         texts = canvas.GetComponentsInChildren<Text>(true);
@@ -54,6 +52,7 @@ public class MessageObject : ClickableObject
         canvas.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
 
+        firstPersonController = FindObjectOfType<FirstPersonController>();
         if (firstPersonController)
         {
             firstPersonController.mouseLookEnabled = false;
