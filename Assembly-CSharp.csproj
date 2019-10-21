@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\System\SceneInformation.cs" />
     <Compile Include="Assets\Scripts\System\SceneType.cs" />
     <Compile Include="Assets\Scripts\System\SystemProperties.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
