@@ -65,14 +65,16 @@ public class ActionObject : MessageObject
         normImage.gameObject.SetActive(false);
         foreach (Text t in normTexts) t.gameObject.SetActive(false);
 
-        altCanvas = gameObject.transform.Find("Alternate Textbox Canvas").GetComponent<Canvas>();
-        altImage = altCanvas.GetComponentInChildren<Image>(true);
-        altTexts = altCanvas.GetComponentsInChildren<Text>(true);
+        if (requirements.Length > 0)
+        {
+            altCanvas = gameObject.transform.Find("Alternate Textbox Canvas").GetComponent<Canvas>();
+            altImage = altCanvas.GetComponentInChildren<Image>(true);
+            altTexts = altCanvas.GetComponentsInChildren<Text>(true);
 
-        altCanvas.gameObject.SetActive(false);
-        altImage.gameObject.SetActive(false);
-        foreach (Text t in altTexts) t.gameObject.SetActive(false);
-
+            altCanvas.gameObject.SetActive(false);
+            altImage.gameObject.SetActive(false);
+            foreach (Text t in altTexts) t.gameObject.SetActive(false);
+        }
     }
 
     public override Color GetColor()
