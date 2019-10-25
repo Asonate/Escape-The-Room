@@ -15,7 +15,7 @@
       <File FileName="Assets/Scripts/System/GameLoader.cs" />
       <File FileName="Assets/Scripts/System/SystemProperties.cs" />
       <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" Line="184" Column="1" />
+      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,7 +37,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e3cf9c9f-a7f0-4178-b35f-9749f34f512b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a859dfb7-4561-4ba7-a797-1cf5a3bae880" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
