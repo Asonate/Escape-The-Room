@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64492712928627388}
   - component: {fileID: 3131695743744302390}
   m_Layer: 0
-  m_Name: Classic_Wall_Corner
+  m_Name: Classic_Wall_Corner_snaps001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2c0bb951fb8a2e44a9fb35bc4af3d739, type: 2}
+  - {fileID: 2100000, guid: 8621dfcb3dbf229428e45425021e0875, type: 2}
   - {fileID: 2100000, guid: 9dd3f5b3049028f4e948921f3bf87f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -68,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2421,10 +2422,10 @@ MonoBehaviour:
   - {x: 0.019995993, y: 0, z: -0.9998001, w: -1}
   - {x: 0.020096678, y: 0.0000002423487, z: -0.999798, w: -1}
   - {x: 0.020197894, y: 0, z: -0.99979603, w: -1}
-  - {x: 0.019995993, y: 0, z: -0.9998001, w: -1}
-  - {x: 0.019995993, y: 0, z: -0.9998001, w: -1}
-  - {x: 0.019995993, y: 0, z: -0.9998001, w: -1}
-  - {x: 0.019995993, y: 0, z: -0.9998001, w: -1}
+  - {x: 0.019995991, y: 0, z: -0.9998001, w: -1}
+  - {x: 0.019995991, y: 0, z: -0.9998001, w: -1}
+  - {x: 0.019995991, y: 0, z: -0.9998001, w: -1}
+  - {x: 0.019995991, y: 0, z: -0.9998001, w: -1}
   - {x: 0.02009719, y: 0.00000026497648, z: -0.99979806, w: -1}
   - {x: 0.019995991, y: -8.42684e-10, z: -0.9998001, w: -1}
   - {x: 0.02009719, y: 0.00000026497648, z: -0.99979806, w: -1}

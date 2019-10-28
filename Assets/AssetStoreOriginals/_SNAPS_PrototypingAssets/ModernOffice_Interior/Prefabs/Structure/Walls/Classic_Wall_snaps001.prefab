@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2c0bb951fb8a2e44a9fb35bc4af3d739, type: 2}
+  - {fileID: 2100000, guid: 8621dfcb3dbf229428e45425021e0875, type: 2}
   - {fileID: 2100000, guid: 9dd3f5b3049028f4e948921f3bf87f79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -68,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1633,17 +1634,17 @@ MonoBehaviour:
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
-  - {x: -0.0000003216167, y: 0, z: -1, w: -1}
+  - {x: -0.0000003216167, y: 1.3398119e-14, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
-  - {x: -0.0000003216167, y: 0, z: -1, w: -1}
+  - {x: -0.0000003216167, y: 1.3398119e-14, z: -1, w: -1}
   - {x: -0.00000032037494, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
-  - {x: -0.0000003216167, y: 0, z: -1, w: -1}
+  - {x: -0.0000003216167, y: -1.3398119e-14, z: -1, w: -1}
   - {x: -0.00000032285845, y: 0, z: -1, w: -1}
-  - {x: -0.0000003216167, y: 0, z: -1, w: -1}
+  - {x: -0.0000003216167, y: -1.3398119e-14, z: -1, w: -1}
   - {x: -0.00000032037494, y: 0, z: -1, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
