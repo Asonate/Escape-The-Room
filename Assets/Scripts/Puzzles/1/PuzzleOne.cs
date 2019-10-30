@@ -36,6 +36,22 @@ public class PuzzleOne : MonoBehaviour
         foreach (Bucket b in buckets) b.UpdateLabel();
     }
 
+    public static void ResetPuzzle()
+    {
+        foreach (Bucket b in buckets)
+        {
+            if (b.capacity == maxCapacity)
+            {
+                b.current = maxCapacity;
+            }
+            else
+            {
+                b.current = 0;
+            }
+        }
+        foreach (Bucket b in buckets) b.UpdateLabel();
+    }
+
     public static bool CheckAnswer()
     {
         int count = 0;

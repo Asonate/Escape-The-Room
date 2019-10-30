@@ -66,9 +66,12 @@
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\Bucket.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\BucketOuter.cs" />
-    <Compile Include="Assets\Scripts\Puzzles\1\CheckAnswer.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\1\CheckAnswerOne.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\ClickableField.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\PuzzleOne.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\2\CheckAnswerTwo.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\2\FieldBlock.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\2\PuzzleTwo.cs" />
     <Compile Include="Assets\Scripts\Room\ActionObject.cs" />
     <Compile Include="Assets\Scripts\Room\ClickableObject.cs" />
     <Compile Include="Assets\Scripts\Room\ItemObject.cs" />

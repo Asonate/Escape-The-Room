@@ -1,23 +1,11 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/1/BucketOuter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/1/CheckAnswerOne.cs">
     <Files>
-      <File FileName="Assets/Scripts/Room/PuzzleObject.cs" Line="72" Column="43" />
-      <File FileName="Assets/Scripts/Room/ItemObject.cs" />
-      <File FileName="Assets/Scripts/Room/ActionObject.cs" Line="70" Column="76" />
-      <File FileName="Assets/Scripts/Room/MessageObject.cs" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" />
-      <File FileName="Assets/Scripts/System/Inventory.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/System/PauseMenu.cs" />
-      <File FileName="Assets/Scripts/System/PauseEventHandler.cs" />
-      <File FileName="Assets/Scripts/Room/NoReload.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/CheckAnswer.cs" />
-      <File FileName="Assets/Scripts/System/GameLoader.cs" />
-      <File FileName="Assets/Scripts/System/SystemProperties.cs" />
-      <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/Bucket.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Puzzles/1/BucketOuter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" Line="117" Column="10" />
+      <File FileName="Assets/Scripts/Puzzles/2/FieldBlock.cs" Line="10" Column="25" />
+      <File FileName="Assets/Scripts/Puzzles/1/CheckAnswer.cs" Line="66" Column="37" />
+      <File FileName="Assets/Scripts/Puzzles/2/CheckAnswerTwo.cs" Line="60" Column="22" />
+      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,10 +15,12 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Puzzles" expanded="True">
                   <Node name="1" expanded="True">
-                    <Node name="BucketOuter.cs" selected="True" />
+                    <Node name="CheckAnswerOne.cs" selected="True" />
                   </Node>
+                  <Node name="2" expanded="True" />
                 </Node>
                 <Node name="Room" expanded="True" />
+                <Node name="System" expanded="True" />
                 <Node name="Tutorial" expanded="True" />
               </Node>
             </Node>
@@ -42,7 +32,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6ba7615d-2b9b-40d2-aeaa-0e5967c7f40c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9e1585be-5723-45c6-952d-617c1941c199" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
