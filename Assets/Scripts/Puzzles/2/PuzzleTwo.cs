@@ -8,8 +8,10 @@ public class PuzzleTwo : MonoBehaviour
 {
     [SerializeField] FieldBlock fieldBlock;
     [SerializeField] Transform parent;
+    [SerializeField] Text textbase;
 
     static FieldBlock[,] field = new FieldBlock[5, 5];
+    static Text text;
     static int placeableQueens = 5;
 
     // Start is called before the first frame update
@@ -32,6 +34,11 @@ public class PuzzleTwo : MonoBehaviour
         }
 
         Destroy(fieldBlock.gameObject);
+
+        text = Instantiate(textbase, textbase.transform.position, Quaternion.identity, parent);
+        text.name = "QueenCount";
+
+        Destroy(textbase.gameObject);
     }
 
     public static void PlaceQueen(int x, int y)
@@ -41,13 +48,20 @@ public class PuzzleTwo : MonoBehaviour
             field[x, y].GetComponent<Image>().color = Color.white;
             field[x, y].queenPlaced = false;
             placeableQueens++;
+            UpdateLabel();
         }
         else if (placeableQueens > 0)
         {
             field[x, y].GetComponent<Image>().color = Color.red;
             field[x, y].queenPlaced = true;
             placeableQueens--;
+            UpdateLabel();
         }
+    }
+
+    public static void UpdateLabel()
+    {
+        text.text = "Placed \nQueens \n" + (5 - placeableQueens) + " / 5";
     }
 
     public static void ResetField()
@@ -59,6 +73,7 @@ public class PuzzleTwo : MonoBehaviour
             f.inCheck = false;
         }
         placeableQueens = 5;
+        UpdateLabel();
     }
 
     public static bool CheckAnswer()
