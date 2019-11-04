@@ -7,15 +7,6 @@ using UnityEngine.UI;
 
 public class CheckAnswerOne : MonoBehaviour
 {
-    [SerializeField] AddedItem[] addedItems;
-    
-    [System.Serializable]
-    public class AddedItem
-    {
-        public int index;
-        public int amount;
-    }
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,28 +16,7 @@ public class CheckAnswerOne : MonoBehaviour
 
     public void Execute()
     {
-        if (PuzzleOne.CheckAnswer())
-        {
-            StartCoroutine(CompletePuzzle());
-        }
-        else
-        {
-            StartCoroutine(ResetPuzzle());
-        }
-    }
-
-    public IEnumerator CompletePuzzle()
-    {
-        foreach (AddedItem a in addedItems)
-        {
-            if (Inventory.items.Length > a.index) Inventory.items[a.index].amount += a.amount;
-        }
-        yield return DisplayMessage();
-    }
-
-    public IEnumerator ResetPuzzle()
-    {
-        yield return DisplayMessage();
+        StartCoroutine(DisplayMessage());
     }
 
     public IEnumerator DisplayMessage()

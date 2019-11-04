@@ -851,9 +851,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You solved the puzzle!
 
-    This earned you one Key Card.
-
-    Press ''r'' to check your Inventory.'
+    You notice a sound coming from the nearby Paper Tray.'
 --- !u!222 &640291972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -920,21 +918,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8828303631017923502, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828303631017923503, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
-        type: 3}
-      propertyPath: sceneType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828303631017923503, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
-        type: 3}
-      propertyPath: sceneIndex
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7386335486238743565, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
         type: 3}
       propertyPath: m_Name
@@ -1001,6 +984,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7386335486238743562, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
+        type: 3}
+      propertyPath: sceneIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828303631017923502, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828303631017923503, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
+        type: 3}
+      propertyPath: sceneType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828303631017923503, guid: 3749b2ab617fd4f7f9ff48117a0c06c6,
         type: 3}
       propertyPath: sceneIndex
       value: 2
@@ -1283,9 +1281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ffc6b32ab34468682c7221cdfa336b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addedItems:
-  - index: 0
-    amount: 1
 --- !u!114 &900183406
 MonoBehaviour:
   m_ObjectHideFlags: 0

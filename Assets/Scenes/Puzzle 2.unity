@@ -346,7 +346,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You cleared the puzzle!
 
-    This earned you one key!'
+    You hear something rumbling inside the bookshelf.'
 --- !u!222 &640291972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -778,7 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a58ff21cdc1e4d9791d5330cc038c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addedItems: []
 --- !u!114 &900183406
 MonoBehaviour:
   m_ObjectHideFlags: 0
