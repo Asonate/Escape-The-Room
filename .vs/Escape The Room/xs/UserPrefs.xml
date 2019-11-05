@@ -1,11 +1,14 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/1/CheckAnswerOne.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/3/PuzzleThree.cs">
     <Files>
       <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" Line="76" Column="23" />
-      <File FileName="Assets/Scripts/Puzzles/2/FieldBlock.cs" />
+      <File FileName="Assets/Scripts/Puzzles/2/FieldBlock.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Puzzles/2/CheckAnswerTwo.cs" Line="19" Column="42" />
-      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" />
       <File FileName="Assets/Scripts/Puzzles/1/CheckAnswerOne.cs" Line="19" Column="42" />
+      <File FileName="Assets/Scripts/Puzzles/3/PuzzleThree.cs" Line="103" Column="23" />
+      <File FileName="Assets/Scripts/Puzzles/3/Field.cs" Line="14" Column="30" />
+      <File FileName="Assets/Scripts/Puzzles/3/NewMonoBehaviour.cs" Line="30" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +17,11 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Puzzles" expanded="True">
-                  <Node name="1" expanded="True">
-                    <Node name="CheckAnswerOne.cs" selected="True" />
-                  </Node>
+                  <Node name="1" expanded="True" />
                   <Node name="2" expanded="True" />
+                  <Node name="3" expanded="True">
+                    <Node name="PuzzleThree.cs" selected="True" />
+                  </Node>
                 </Node>
                 <Node name="Room" expanded="True" />
                 <Node name="System" expanded="True" />
@@ -32,7 +36,6 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="df1f7cd1-0a52-4dea-a298-513de7dcb980" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -72,6 +72,9 @@
     <Compile Include="Assets\Scripts\Puzzles\2\CheckAnswerTwo.cs" />
     <Compile Include="Assets\Scripts\Puzzles\2\FieldBlock.cs" />
     <Compile Include="Assets\Scripts\Puzzles\2\PuzzleTwo.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\3\Field.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\3\CheckAnswerThree.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\3\PuzzleThree.cs" />
     <Compile Include="Assets\Scripts\Room\ActionObject.cs" />
     <Compile Include="Assets\Scripts\Room\ClickableObject.cs" />
     <Compile Include="Assets\Scripts\Room\ItemObject.cs" />
