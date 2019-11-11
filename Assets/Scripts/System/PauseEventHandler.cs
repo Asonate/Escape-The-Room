@@ -15,7 +15,7 @@ public class PauseEventHandler : MonoBehaviour
         FindObjectOfType<PlayerData>().ResetData();
         Destroy(FindObjectOfType<SystemProperties>().gameObject);
         Destroy(FindObjectOfType<NoReload>().gameObject);
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main 1");
     }
 
     public void LoadMainMenu()

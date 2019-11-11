@@ -29,7 +29,7 @@ public class CheckAnswerTwo : MonoBehaviour
 
         if (PuzzleTwo.CheckAnswer())
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Main 1");
         }
         else
         {

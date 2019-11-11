@@ -29,7 +29,7 @@ public class CheckAnswerOne : MonoBehaviour
 
         if(PuzzleOne.CheckAnswer())
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Main 1");
         }
         else
         {

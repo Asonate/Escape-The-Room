@@ -27,7 +27,7 @@ public class GameLoader : MonoBehaviour
     public void LoadGame()
     {
 
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main 1");
     }
 
     public void LoadTutorial()
