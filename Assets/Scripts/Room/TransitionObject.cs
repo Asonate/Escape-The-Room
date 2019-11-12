@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class TransitionObject : MessageObject
 {
     [SerializeField] string sceneName;
+    [SerializeField] int gamestate;
+    [SerializeField] GameObject worldToDestroy;
 
     int objectIndex;
 
@@ -50,7 +52,9 @@ public class TransitionObject : MessageObject
 
         PlayerData.clickedObjects.Add(objectIndex);
 
+        PlayerData.gamestate = gamestate;
         SceneManager.LoadScene(sceneName);
+        Destroy(worldToDestroy);
 
         gameObject.SetActive(false);
     }
