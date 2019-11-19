@@ -1,8 +1,14 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/3/PuzzleThree.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room/MessageObject.cs">
     <Files>
-      <File FileName="Assets/Scripts/Room/TransitionObject.cs" Line="57" Column="32" />
-      <File FileName="Assets/Scripts/Puzzles/3/PuzzleThree.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Room/TransitionObject.cs" Line="57" Column="9" />
+      <File FileName="Assets/Scripts/Puzzles/3/PuzzleThree.cs" />
+      <File FileName="Assets/Scripts/System/SceneInformation.cs" />
+      <File FileName="Assets/Scripts/System/SystemProperties.cs" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="25" Column="10" />
+      <File FileName="Assets/Scripts/Room/NoReload.cs" />
+      <File FileName="Assets/Scripts/Room/LoadRoom.cs" />
+      <File FileName="Assets/Scripts/Room/MessageObject.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +19,11 @@
                 <Node name="Puzzles" expanded="True">
                   <Node name="1" expanded="True" />
                   <Node name="2" expanded="True" />
-                  <Node name="3" expanded="True">
-                    <Node name="PuzzleThree.cs" selected="True" />
-                  </Node>
+                  <Node name="3" expanded="True" />
                 </Node>
-                <Node name="Room" expanded="True" />
+                <Node name="Room" expanded="True">
+                  <Node name="MessageObject.cs" selected="True" />
+                </Node>
                 <Node name="System" expanded="True" />
                 <Node name="Tutorial" expanded="True" />
               </Node>
@@ -30,7 +36,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6e1ae9d6-d8db-432b-9d8c-a81b176daa6c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3999a226-b9e9-4480-9ed6-18d3b26a345e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

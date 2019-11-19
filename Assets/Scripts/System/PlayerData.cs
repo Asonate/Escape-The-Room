@@ -12,7 +12,7 @@ public class PlayerData : MonoBehaviour
     public static List<int> clickedObjects = new List<int>();
     public static int objectIndex;
 
-    FirstPersonController[] firstPersonControllers;
+    [SerializeField] FirstPersonController[] firstPersonControllers;
 
     void OnEnable()
     {
@@ -23,8 +23,6 @@ public class PlayerData : MonoBehaviour
     {
         if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
         {
-            firstPersonControllers = FindObjectsOfType<FirstPersonController>().OrderBy(m => m.name).ToArray();
-
             foreach (FirstPersonController f in firstPersonControllers)
             {
                 f.gameObject.SetActive(false);
