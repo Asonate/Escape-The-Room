@@ -21,13 +21,13 @@ public class PlayerData : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        foreach (FirstPersonController f in firstPersonControllers)
+        {
+            f.gameObject.SetActive(false);
+        }
+
         if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
         {
-            foreach (FirstPersonController f in firstPersonControllers)
-            {
-                f.gameObject.SetActive(false);
-            }
-
             if(firstPersonControllers.Length >= gamestate) firstPersonControllers[gamestate].gameObject.SetActive(true);
         }
     }
