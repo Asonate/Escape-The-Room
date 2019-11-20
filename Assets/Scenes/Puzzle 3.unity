@@ -1453,9 +1453,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Click a blue field to jump to it.
+  m_Text: 'Click a green field to jump to it.
 
-    Your current field is colored red.'
+    Your current field is colored red.
+
+    Visited fields are colored blue.'
 --- !u!222 &1250884669
 CanvasRenderer:
   m_ObjectHideFlags: 0
