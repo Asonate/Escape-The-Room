@@ -24,12 +24,14 @@ public class ClickableField : MonoBehaviour
 
     public void ShowText()
     {
-        foreach (ClickableField c in FindObjectsOfType<ClickableField>())
-        {
-            c.HideText();
-        }
+        if (!PlayerData.currentlyInMenu) {
+            foreach (ClickableField c in FindObjectsOfType<ClickableField>())
+            {
+                c.HideText();
+            }
 
-        StartCoroutine(ObjectAction());
+            StartCoroutine(ObjectAction());
+        }
     }
 
     public virtual IEnumerator ObjectAction()
@@ -39,6 +41,8 @@ public class ClickableField : MonoBehaviour
 
     public IEnumerator DisplayMessage()
     {
+        PlayerData.currentlyInMenu = true;
+
         foreach (Text t in texts)
         {
             t.gameObject.SetActive(true);
@@ -47,6 +51,8 @@ public class ClickableField : MonoBehaviour
 
             t.gameObject.SetActive(false);
         }
+
+        PlayerData.currentlyInMenu = false;
     }
 
     public IEnumerator WaitForPlayerInput()

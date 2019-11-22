@@ -16,16 +16,23 @@ public class CheckAnswerThree : MonoBehaviour
 
     public void Execute()
     {
-        StartCoroutine(DisplayMessage());
+        if (!PlayerData.currentlyInMenu)
+        {
+            StartCoroutine(DisplayMessage());
+        }
     }
 
     public IEnumerator DisplayMessage()
     {
+        PlayerData.currentlyInMenu = true;
+
         Text text = PuzzleThree.CheckAnswer() ? transform.Find("Success Text").GetComponent<Text>() : transform.Find("Failure Text").GetComponent<Text>();
 
         text.gameObject.SetActive(true);
         yield return WaitForPlayerInput();
         text.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
 
         if (PuzzleThree.CheckAnswer())
         {

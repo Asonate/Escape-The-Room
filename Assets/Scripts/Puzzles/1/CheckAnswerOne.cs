@@ -16,18 +16,25 @@ public class CheckAnswerOne : MonoBehaviour
 
     public void Execute()
     {
-        StartCoroutine(DisplayMessage());
+        if (!PlayerData.currentlyInMenu)
+        {
+            StartCoroutine(DisplayMessage());
+        }
     }
 
     public IEnumerator DisplayMessage()
     {
+        PlayerData.currentlyInMenu = true;
+
         Text text = PuzzleOne.CheckAnswer() ? transform.Find("Success Text").GetComponent<Text>() : transform.Find("Failure Text").GetComponent<Text>();
 
         text.gameObject.SetActive(true);
         yield return WaitForPlayerInput();
         text.gameObject.SetActive(false);
 
-        if(PuzzleOne.CheckAnswer())
+        PlayerData.currentlyInMenu = false;
+
+        if (PuzzleOne.CheckAnswer())
         {
             SceneManager.LoadScene("Main 1");
         }
