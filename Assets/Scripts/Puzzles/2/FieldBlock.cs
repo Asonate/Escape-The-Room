@@ -11,6 +11,9 @@ public class FieldBlock : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PuzzleTwo.PlaceQueen(x, y);
+        if (!PlayerData.currentlyInMenu)
+        {
+            PuzzleTwo.PlaceQueen(x, y);
+        }
     }
 }

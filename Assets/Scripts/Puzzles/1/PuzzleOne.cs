@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PuzzleOne : MonoBehaviour
 {
+    public Button buttonAssign;
+    public static Button button;
     public static int maxCapacity = 10;
     static List<Bucket> buckets;
 
@@ -21,6 +21,7 @@ public class PuzzleOne : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        button = buttonAssign;
         buckets = FindObjectsOfType<Bucket>().ToList();
         if (buckets != null)
         {
@@ -60,5 +61,10 @@ public class PuzzleOne : MonoBehaviour
             if (b.current == maxCapacity / 2) count++;
         }
         return count == 2;
+    }
+
+    public static void ClearPuzzle()
+    {
+        button.onClick.Invoke();
     }
 }

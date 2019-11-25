@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,6 +26,7 @@ public class CheckAnswerThree : MonoBehaviour
 
         Text text = PuzzleThree.CheckAnswer() ? transform.Find("Success Text").GetComponent<Text>() : transform.Find("Failure Text").GetComponent<Text>();
 
+        yield return new WaitForSecondsRealtime(.25f);
         text.gameObject.SetActive(true);
         yield return WaitForPlayerInput();
         text.gameObject.SetActive(false);

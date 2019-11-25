@@ -175,7 +175,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CHECK ANSWER
+  m_text: 'RESET
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a813eea2df07e479781f96dbaf53b440, type: 2}
   m_sharedMaterial: {fileID: 8456421066973781182, guid: a813eea2df07e479781f96dbaf53b440,
@@ -245,10 +247,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 483116504}
-    characterCount: 12
+    characterCount: 6
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -406,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1354518305}
   parent: {fileID: 647367779}
+  buttonAssign: {fileID: 900183408}
 --- !u!1001 &728758973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -736,7 +739,7 @@ GameObject:
   - component: {fileID: 900183405}
   - component: {fileID: 900183408}
   m_Layer: 5
-  m_Name: Check-Answer-Button
+  m_Name: Reset-Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Field : MonoBehaviour
 {
@@ -11,6 +9,9 @@ public class Field : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PuzzleThree.JumpField(x, y);
+        if (!PlayerData.currentlyInMenu)
+        {
+            PuzzleThree.JumpField(x, y);
+        }
     }
 }

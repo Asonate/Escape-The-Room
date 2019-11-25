@@ -22,41 +22,44 @@ public class BucketOuter : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!PuzzleOne.firstSelected)
+        if (!PlayerData.currentlyInMenu)
         {
-            if (bucket.current == 0) return;
+            if (!PuzzleOne.firstSelected)
+            {
+                if (bucket.current == 0) return;
 
-            selection.gameObject.SetActive(true);
-            PuzzleOne.first = bucket;
-            PuzzleOne.firstSelected = true;
-        }
-        else
-        {
-            if (PuzzleOne.first == bucket)
-            {
-                foreach(BucketOuter b in FindObjectsOfType<BucketOuter>())
-                {
-                b.selection.gameObject.SetActive(false);
-                }
-                PuzzleOne.firstSelected = false;
-                return;
+                selection.gameObject.SetActive(true);
+                PuzzleOne.first = bucket;
+                PuzzleOne.firstSelected = true;
             }
-            if (bucket.current == bucket.capacity)
+            else
             {
+                if (PuzzleOne.first == bucket)
+                {
+                    foreach (BucketOuter b in FindObjectsOfType<BucketOuter>())
+                    {
+                        b.selection.gameObject.SetActive(false);
+                    }
+                    PuzzleOne.firstSelected = false;
+                    return;
+                }
+                if (bucket.current == bucket.capacity)
+                {
+                    foreach (BucketOuter b in FindObjectsOfType<BucketOuter>())
+                    {
+                        b.selection.gameObject.SetActive(false);
+                    }
+                    PuzzleOne.firstSelected = false;
+                    return;
+                }
+
                 foreach (BucketOuter b in FindObjectsOfType<BucketOuter>())
                 {
                     b.selection.gameObject.SetActive(false);
                 }
+                PuzzleOne.first.Transfer(bucket);
                 PuzzleOne.firstSelected = false;
-                return;
             }
-
-            foreach (BucketOuter b in FindObjectsOfType<BucketOuter>())
-            {
-                b.selection.gameObject.SetActive(false);
-            }
-            PuzzleOne.first.Transfer(bucket);
-            PuzzleOne.firstSelected = false;
         }
     }
 }

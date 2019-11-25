@@ -26,6 +26,7 @@ public class Bucket : MonoBehaviour
         }
         this.UpdateLabel();
         b.UpdateLabel();
+        if (PuzzleOne.CheckAnswer()) PuzzleOne.ClearPuzzle();
     }
 
     public void UpdateLabel()

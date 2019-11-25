@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PuzzleThree : MonoBehaviour
 {
     [SerializeField] Field field;
     [SerializeField] Transform parent;
+
+    public Button buttonAssign;
+    public static Button button;
 
     static Field[,] fields = new Field[3,4];
     static Field ActiveField;
@@ -20,6 +20,7 @@ public class PuzzleThree : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        button = buttonAssign;
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 4; j++)
@@ -49,6 +50,7 @@ public class PuzzleThree : MonoBehaviour
             ActiveField.HasVisited = true;
             ShowOptions();
         }
+        if (CheckAnswer()) ClearPuzzle();
     }
 
     public static void ShowOptions()
@@ -110,5 +112,10 @@ public class PuzzleThree : MonoBehaviour
             if (!f.HasVisited) return false;
         }
         return true;
+    }
+
+    public static void ClearPuzzle()
+    {
+        button.onClick.Invoke();
     }
 }
