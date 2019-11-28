@@ -86,10 +86,12 @@
     <Compile Include="Assets\Scripts\Room\NoReload.cs" />
     <Compile Include="Assets\Scripts\Room\PuzzleObject.cs" />
     <Compile Include="Assets\Scripts\Room\TransitionObject.cs" />
+    <Compile Include="Assets\Scripts\System\Directions.cs" />
     <Compile Include="Assets\Scripts\System\GameLoader.cs" />
     <Compile Include="Assets\Scripts\System\Interactor.cs" />
     <Compile Include="Assets\Scripts\System\Inventory.cs" />
     <Compile Include="Assets\Scripts\System\InventoryEventHandler.cs" />
+    <Compile Include="Assets\Scripts\System\Minimap.cs" />
     <Compile Include="Assets\Scripts\System\PauseEventHandler.cs" />
     <Compile Include="Assets\Scripts\System\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\System\PlayerData.cs" />
