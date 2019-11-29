@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/Directions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/Interactor.cs">
     <Files>
       <File FileName="Assets/Scripts/System/Directions.cs" Line="30" Column="35" />
+      <File FileName="Assets/Scripts/Room/DirectionUpdater.cs" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/System/Interactor.cs" Line="55" Column="85" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +19,7 @@
                 </Node>
                 <Node name="Room" expanded="True" />
                 <Node name="System" expanded="True">
-                  <Node name="Directions.cs" selected="True" />
+                  <Node name="Interactor.cs" selected="True" />
                 </Node>
                 <Node name="Tutorial" expanded="True" />
               </Node>
@@ -30,7 +32,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="517f6446-8df0-49ce-bab9-3b1b15a29820" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e676baca-a983-4dd9-866d-2c2b49e9c79b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

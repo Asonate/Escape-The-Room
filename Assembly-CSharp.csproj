@@ -80,13 +80,14 @@
     <Compile Include="Assets\Scripts\Puzzles\4\PuzzleFour.cs" />
     <Compile Include="Assets\Scripts\Room\ActionObject.cs" />
     <Compile Include="Assets\Scripts\Room\ClickableObject.cs" />
+    <Compile Include="Assets\Scripts\Room\DirectionUpdater.cs" />
     <Compile Include="Assets\Scripts\Room\ItemObject.cs" />
     <Compile Include="Assets\Scripts\Room\LoadRoom.cs" />
+    <Compile Include="Assets\Scripts\Room\MapUpdater.cs" />
     <Compile Include="Assets\Scripts\Room\MessageObject.cs" />
     <Compile Include="Assets\Scripts\Room\NoReload.cs" />
     <Compile Include="Assets\Scripts\Room\PuzzleObject.cs" />
     <Compile Include="Assets\Scripts\Room\TransitionObject.cs" />
-    <Compile Include="Assets\Scripts\Room\UpdateDirectionObject.cs" />
     <Compile Include="Assets\Scripts\System\Directions.cs" />
     <Compile Include="Assets\Scripts\System\GameLoader.cs" />
     <Compile Include="Assets\Scripts\System\Interactor.cs" />

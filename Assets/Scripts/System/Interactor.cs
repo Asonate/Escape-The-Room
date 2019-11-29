@@ -52,19 +52,17 @@ public class Interactor : MonoBehaviour
     {
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 5))
         {
-            UpdateDirectionObject direction = hit.transform.GetComponent<UpdateDirectionObject>();
+            DirectionUpdater direction = hit.transform.GetComponent<DirectionUpdater>();
             if (direction)
             {
                 direction.Execute();
             }
-            else
+            ClickableObject target = hit.transform.GetComponent<ClickableObject>();
+            if (target)
             {
-                ClickableObject target = hit.transform.GetComponent<ClickableObject>();
-                if (target)
-                {
-                    target.Execute();
-                }
+                target.Execute();
             }
         }
+        
     }
 }
