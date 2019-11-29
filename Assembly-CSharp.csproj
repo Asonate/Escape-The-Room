@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Room\NoReload.cs" />
     <Compile Include="Assets\Scripts\Room\PuzzleObject.cs" />
     <Compile Include="Assets\Scripts\Room\TransitionObject.cs" />
+    <Compile Include="Assets\Scripts\Room\UpdateDirectionObject.cs" />
     <Compile Include="Assets\Scripts\System\Directions.cs" />
     <Compile Include="Assets\Scripts\System\GameLoader.cs" />
     <Compile Include="Assets\Scripts\System\Interactor.cs" />
