@@ -13,6 +13,7 @@ public class PlayerData : MonoBehaviour
     public static int objectIndex;
 
     [SerializeField] FirstPersonController[] firstPersonControllers;
+    static FirstPersonController activeController;
 
     void OnEnable()
     {
@@ -28,8 +29,17 @@ public class PlayerData : MonoBehaviour
 
         if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
         {
-            if(firstPersonControllers.Length >= gamestate) firstPersonControllers[gamestate].gameObject.SetActive(true);
+            if (firstPersonControllers.Length >= gamestate)
+            {
+                firstPersonControllers[gamestate].gameObject.SetActive(true);
+                activeController = firstPersonControllers[gamestate];
+            }
         }
+    }
+
+    public static FirstPersonController GetActiveController()
+    {
+        return activeController;
     }
 
     void OnDisable()
