@@ -22,7 +22,7 @@ public class Directions : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerData.currentlyInMenu)
+        if(PlayerData.currentlyInMenu || FindObjectOfType<SceneInformation>().sceneType != SceneType.Room)
         {
             canvasGroup.alpha = 0f;
         } else

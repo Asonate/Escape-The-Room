@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Minimap : MonoBehaviour
 {
+    [SerializeField] Image player;
     [SerializeField] Image[] maps;
     Image activeMap;
     Image previousMap;
@@ -24,6 +26,11 @@ public class Minimap : MonoBehaviour
         Invoke("SetActiveVariables", .25f);
     }
 
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void SetActiveVariables()
     {
         activeWorld = FindObjectOfType<SceneInformation>().sceneIndex;
@@ -33,7 +40,13 @@ public class Minimap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeController == null || activeWorld == 0)
+        SwapMap();
+        SetPosition();
+    }
+
+    private void SwapMap()
+    {
+        if (activeController == null || activeWorld == 0)
         {
             foreach (Image i in maps)
             {
@@ -41,6 +54,7 @@ public class Minimap : MonoBehaviour
             }
             return;
         }
+
         switch (activeWorld)
         {
             case 1:
@@ -70,14 +84,44 @@ public class Minimap : MonoBehaviour
         }
         else
         {
-        if(previousMap != activeMap)
+            if (previousMap != activeMap)
             {
-                foreach(Image i in maps)
+                foreach (Image i in maps)
                 {
                     i.gameObject.SetActive(false);
                 }
                 activeMap.gameObject.SetActive(true);
             }
+        }
+    }
+
+    private void SetPosition()
+    {
+        if (activeController == null || activeWorld == 0)
+        {
+            player.gameObject.SetActive(false);
+            return;
+        }
+        player.gameObject.SetActive(true);
+
+        switch (activeWorld)
+        {
+            case 1:
+                if (activeController.transform.position.y >= 101)
+                {
+                    player.transform.localPosition = new Vector3(activeController.transform.localPosition.x, activeController.transform.localPosition.z, 0);
+                }
+                else
+                {
+                    player.transform.localPosition = new Vector3(activeController.transform.localPosition.x, activeController.transform.localPosition.z, 0);
+                }
+                break;
+            case 2:
+                player.transform.localPosition = new Vector3(activeController.transform.localPosition.z, activeController.transform.localPosition.x, 0);
+                break;
+            default:
+                //activeMap = null;
+                break;
         }
     }
 }
