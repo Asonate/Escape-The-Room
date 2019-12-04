@@ -1,12 +1,9 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/Minimap.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/5/PuzzleFive.cs">
     <Files>
-      <File FileName="Assets/Scripts/System/Directions.cs" Line="29" Column="10" />
-      <File FileName="Assets/Scripts/Room/DirectionUpdater.cs" />
-      <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Room/MapUpdater.cs" />
-      <File FileName="Assets/Scripts/System/Minimap.cs" Line="33" Column="1" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="45" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/5/CheckAnswerFive.cs" Line="42" Column="23" />
+      <File FileName="Assets/Scripts/Puzzles/5/FieldUnit.cs" Line="28" Column="97" />
+      <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" Line="95" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,11 +16,12 @@
                   <Node name="2" expanded="True" />
                   <Node name="3" expanded="True" />
                   <Node name="4" expanded="True" />
+                  <Node name="5" expanded="True">
+                    <Node name="PuzzleFive.cs" selected="True" />
+                  </Node>
                 </Node>
                 <Node name="Room" expanded="True" />
-                <Node name="System" expanded="True">
-                  <Node name="Minimap.cs" selected="True" />
-                </Node>
+                <Node name="System" expanded="True" />
                 <Node name="Tutorial" expanded="True" />
               </Node>
             </Node>
@@ -35,7 +33,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7450d6cc-6b7d-4180-9a13-4ab0cd0e35eb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b18b9b36-f063-4296-9398-998f31653165" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
