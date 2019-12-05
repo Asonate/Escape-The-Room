@@ -344,7 +344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click a now displayed green field to move the peg on the red field there.
+  m_Text: Click a now displayed green field to move there.
 --- !u!222 &586386762
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 647367778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2134764602bb3469093840406cc382e9, type: 3}
+  m_Script: {fileID: 11500000, guid: e934aed62189a4b37816b736c484e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   field: {fileID: 1354518305}
@@ -552,7 +552,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can only move pegs by jumping over other pegs.
+  m_Text: Your selected field will now be empty, instead filling the field you jumped
+    to.
 --- !u!222 &690786553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -928,7 +929,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 900183403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed697dfc6f1f64864a3ec930aecf9a83, type: 3}
+  m_Script: {fileID: 11500000, guid: 233c22c142dca4d9a9946c40c498f302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &900183406
@@ -1235,7 +1236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You remove pegs by jumping over them with another.
+  m_Text: You swap fields activity status by jumping over them with another.
 --- !u!222 &1002672550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1468,9 +1469,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You have a board with 33 fields.
+  m_Text: 'You have a board with 5 fields.
 
-    Some of those fields contain pegs.'
+    These fields are either empty, active or inactive.'
 --- !u!222 &1177059953
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1691,7 +1692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This will remove the blue field you jumped over.
+  m_Text: This will swap the activity status of all non-empty fields you jumped over.
 --- !u!222 &1239368518
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1768,7 +1769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click a blue field to show your moves.
+  m_Text: Click a blue or grey field to show your moves.
 --- !u!222 &1250884669
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1806,7 +1807,7 @@ RectTransform:
   m_GameObject: {fileID: 1354518303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.00015258789}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 647367779}
   m_RootOrder: 0
@@ -1825,14 +1826,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354518303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403eccb4de8e24fe28fb09d39529cde8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fad74aceb2c94f7ebb14716c5353bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  hasMarble: 0
   canJumpTo: 0
-  isPlayArea: 0
+  fieldState: 2
 --- !u!61 &1354518306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2202,7 +2202,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your task is to remove all pegs except for one.
+  m_Text: Your task is to make all fields active.
 --- !u!222 &1906403490
 CanvasRenderer:
   m_ObjectHideFlags: 0
