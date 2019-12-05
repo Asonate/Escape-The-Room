@@ -25,12 +25,10 @@ public class FieldUnit : MonoBehaviour
                 PuzzleFive.FreeSelection();
             }
         }
-        else if (!PlayerData.currentlyInMenu && this.fieldState == state.empty && this.canJumpTo)
+        else if (!PlayerData.currentlyInMenu && this.canJumpTo)
         {
-            if (PuzzleFive.fieldSelected)
-            {
-                PuzzleFive.JumpField(x);
-            }
+            PuzzleFive.JumpField(x);
+
         }
     }
 }

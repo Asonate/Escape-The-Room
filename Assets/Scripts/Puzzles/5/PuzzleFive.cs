@@ -37,7 +37,11 @@ public class PuzzleFive : MonoBehaviour
 
     private static void SetupPlayArea()
     {
-
+        fields[0].fieldState = FieldUnit.state.active;
+        fields[1].fieldState = FieldUnit.state.inactive;
+        fields[2].fieldState = FieldUnit.state.empty;
+        fields[3].fieldState = FieldUnit.state.inactive;
+        fields[4].fieldState = FieldUnit.state.inactive;
     }
 
     private static void ColorPlayArea()
@@ -58,7 +62,26 @@ public class PuzzleFive : MonoBehaviour
         fieldSelected = true;
         selectedField = fields[x];
 
-        // TODO mark empty fields next to selection
+        int count = x;
+        while(count >= 0)
+        {
+            if(fields[count].fieldState == FieldUnit.state.empty && Mathf.Abs(count - x) != 1)
+            {
+                fields[count].canJumpTo = true;
+                break;
+            }
+            count--;
+        }
+        count = x;
+        while (count < fields.Length)
+        {
+            if (fields[count].fieldState == FieldUnit.state.empty && Mathf.Abs(count - x) != 1)
+            {
+                fields[count].canJumpTo = true;
+                break;
+            }
+            count++;
+        }
 
         ColorPlayArea();
     }
@@ -78,11 +101,44 @@ public class PuzzleFive : MonoBehaviour
 
     public static void JumpField(int x)
     {
+        if(selectedField.x < x)
+        {
+            foreach(FieldUnit f in fields)
+            {
+                if(f.x < x && f.x > selectedField.x)
+                {
+                    if (f.fieldState == FieldUnit.state.active)
+                    {
+                        f.fieldState = FieldUnit.state.inactive;
+                    }
+                    else if (f.fieldState == FieldUnit.state.inactive)
+                    {
+                        f.fieldState = FieldUnit.state.active;
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (FieldUnit f in fields)
+            {
+                if (f.x > x && f.x < selectedField.x)
+                {
+                    if (f.fieldState == FieldUnit.state.active)
+                    {
+                        f.fieldState = FieldUnit.state.inactive;
+                    }
+                    else if (f.fieldState == FieldUnit.state.inactive)
+                    {
+                        f.fieldState = FieldUnit.state.active;
+                    }
+                }
+            }
+        }
+
         fields[x].fieldState = selectedField.fieldState;
         selectedField.fieldState = FieldUnit.state.empty;
 
-        // TODO swap state of fields inbetween
-        
         FreeSelection();
         if (CheckAnswer()) ClearPuzzle();
     }
