@@ -8,8 +8,8 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] Image playerMovement;
     [SerializeField] Image cameraMovement;
-    [SerializeField] Image left;
     [SerializeField] Image right;
+    [SerializeField] Image left;
     [SerializeField] Image pause;
     [SerializeField] Image inventory;
     [SerializeField] Image done;
@@ -19,8 +19,8 @@ public class Tutorial : MonoBehaviour
     {
         playerMovement.gameObject.SetActive(false);
         cameraMovement.gameObject.SetActive(false);
-        left.gameObject.SetActive(false);
         right.gameObject.SetActive(false);
+        left.gameObject.SetActive(false);
         pause.gameObject.SetActive(false);
         inventory.gameObject.SetActive(false);
         done.gameObject.SetActive(false);
@@ -38,7 +38,7 @@ public class Tutorial : MonoBehaviour
 
         playerMovement.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         playerMovement.CrossFadeAlpha(0f, .5f, true);
         playerMovement.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -86,7 +86,7 @@ public class Tutorial : MonoBehaviour
 
         cameraMovement.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         cameraMovement.CrossFadeAlpha(0f, .5f, true);
         cameraMovement.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -120,54 +120,6 @@ public class Tutorial : MonoBehaviour
             yield return new WaitForSecondsRealtime(.01f);
         }
 
-        StartCoroutine(GetLeftClick());
-    }
-
-    IEnumerator GetLeftClick()
-    {
-        yield return new WaitForSeconds(.5f);
-
-        Vector3 oldPos = left.gameObject.transform.localPosition;
-
-        left.gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
-        left.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-
-        left.gameObject.SetActive(true);
-
-        yield return new WaitForSecondsRealtime(1f);
-
-        left.CrossFadeAlpha(0f, .5f, true);
-        left.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
-
-        while (left.gameObject.transform.localScale.x > 0)
-        {
-            left.gameObject.transform.localScale -= new Vector3(.025f, .025f, .025f);
-            yield return new WaitForSecondsRealtime(.0005f);
-        }
-
-        left.CrossFadeAlpha(1f, .1f, true);
-        left.GetComponentInChildren<Text>().CrossFadeAlpha(1f, .1f, true);
-
-        left.gameObject.transform.localPosition = new Vector3(oldPos.x - 550, oldPos.y, oldPos.z);
-        left.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-
-        while (left.gameObject.transform.localPosition.x < oldPos.x)
-        {
-            left.gameObject.transform.localPosition += new Vector3(10f, 0f, 0f);
-            yield return new WaitForSecondsRealtime(.01f);
-        }
-
-        yield return WaitForPlayerButton("Fire1");
-
-        left.CrossFadeAlpha(0f, .5f, true);
-        left.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
-
-        for (int i = 0; i < 100; i++)
-        {
-            left.gameObject.transform.localPosition += new Vector3(10f, 0f, 0f);
-            yield return new WaitForSecondsRealtime(.01f);
-        }
-
         StartCoroutine(GetRightClick());
     }
 
@@ -182,7 +134,7 @@ public class Tutorial : MonoBehaviour
 
         right.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         right.CrossFadeAlpha(0f, .5f, true);
         right.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -205,7 +157,7 @@ public class Tutorial : MonoBehaviour
             yield return new WaitForSecondsRealtime(.01f);
         }
 
-        yield return WaitForPlayerButton("Fire2");
+        yield return WaitForPlayerButton("Fire1");
 
         right.CrossFadeAlpha(0f, .5f, true);
         right.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -213,6 +165,54 @@ public class Tutorial : MonoBehaviour
         for (int i = 0; i < 100; i++)
         {
             right.gameObject.transform.localPosition += new Vector3(10f, 0f, 0f);
+            yield return new WaitForSecondsRealtime(.01f);
+        }
+
+        StartCoroutine(GetLeftClick());
+    }
+
+    IEnumerator GetLeftClick()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        Vector3 oldPos = left.gameObject.transform.localPosition;
+
+        left.gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+        left.gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+
+        left.gameObject.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        left.CrossFadeAlpha(0f, .5f, true);
+        left.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
+
+        while (left.gameObject.transform.localScale.x > 0)
+        {
+            left.gameObject.transform.localScale -= new Vector3(.025f, .025f, .025f);
+            yield return new WaitForSecondsRealtime(.0005f);
+        }
+
+        left.CrossFadeAlpha(1f, .1f, true);
+        left.GetComponentInChildren<Text>().CrossFadeAlpha(1f, .1f, true);
+
+        left.gameObject.transform.localPosition = new Vector3(oldPos.x - 550, oldPos.y, oldPos.z);
+        left.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+
+        while (left.gameObject.transform.localPosition.x < oldPos.x)
+        {
+            left.gameObject.transform.localPosition += new Vector3(10f, 0f, 0f);
+            yield return new WaitForSecondsRealtime(.01f);
+        }
+
+        yield return WaitForPlayerButton("Fire2");
+
+        left.CrossFadeAlpha(0f, .5f, true);
+        left.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
+
+        for (int i = 0; i < 100; i++)
+        {
+            left.gameObject.transform.localPosition += new Vector3(10f, 0f, 0f);
             yield return new WaitForSecondsRealtime(.01f);
         }
 
@@ -230,7 +230,7 @@ public class Tutorial : MonoBehaviour
 
         pause.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         pause.CrossFadeAlpha(0f, .5f, true);
         pause.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -278,7 +278,7 @@ public class Tutorial : MonoBehaviour
 
         inventory.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         inventory.CrossFadeAlpha(0f, .5f, true);
         inventory.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);
@@ -319,7 +319,7 @@ public class Tutorial : MonoBehaviour
 
         done.gameObject.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         done.CrossFadeAlpha(0f, .5f, true);
         done.GetComponentInChildren<Text>().CrossFadeAlpha(0f, .5f, true);

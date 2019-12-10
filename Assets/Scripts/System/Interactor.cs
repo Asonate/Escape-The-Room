@@ -17,14 +17,17 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (!PlayerData.currentlyInMenu)
         {
-            Scout();
-        }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Scout();
+            }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Interact();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Interact();
+            }
         }
     }
 

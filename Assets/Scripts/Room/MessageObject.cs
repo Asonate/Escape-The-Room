@@ -61,6 +61,8 @@ public class MessageObject : ClickableObject
         Cursor.visible = true;
         Time.timeScale = 0;
 
+        yield return new WaitForSecondsRealtime(.025f);
+
         foreach (Text t in texts)
         {
             t.gameObject.SetActive(true);
@@ -90,9 +92,9 @@ public class MessageObject : ClickableObject
         bool done = false;
         while (!done)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
-                done = true;
+                done = true;    
             }
             yield return null;
         }

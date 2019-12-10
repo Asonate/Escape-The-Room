@@ -7,6 +7,7 @@ public class GameLoaderEndgame : MonoBehaviour
 {
     private void Start()
     {
+        PlayerData.currentlyInMenu = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

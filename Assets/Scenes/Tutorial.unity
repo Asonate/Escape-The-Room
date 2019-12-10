@@ -7981,7 +7981,7 @@ GameObject:
   - component: {fileID: 1298368582}
   - component: {fileID: 1298368581}
   m_Layer: 0
-  m_Name: Left-Click
+  m_Name: Right-Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9306,7 +9306,7 @@ GameObject:
   - component: {fileID: 1560658040}
   - component: {fileID: 1560658039}
   m_Layer: 0
-  m_Name: Right-Click
+  m_Name: Left-Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10728,7 +10728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Left-Click to scan objects for their type
+  m_Text: Right-Click to scan objects for their type
 --- !u!222 &1817605507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11774,7 +11774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right-Click to interact with objects
+  m_Text: Left-Click to interact with objects
 --- !u!222 &1983063143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12924,6 +12924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff896251f5584bb4ade79e32bea5158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstPersonControllers: []
 --- !u!1 &4457721903706796862
 GameObject:
   m_ObjectHideFlags: 0
