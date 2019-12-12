@@ -57,7 +57,7 @@ public class Minimap : MonoBehaviour
 
         switch (activeWorld)
         {
-            case 1:
+            case 3:
                 if (activeController.transform.position.y >= 101)
                 {
                     activeMap = maps[0];
@@ -67,7 +67,7 @@ public class Minimap : MonoBehaviour
                     activeMap = maps[1];
                 }
                 break;
-            case 2:
+            case 4:
                 activeMap = maps[2];
                 break;
             default:
@@ -106,7 +106,7 @@ public class Minimap : MonoBehaviour
 
         switch (activeWorld)
         {
-            case 1:
+            case 3:
                 if (activeController.transform.position.y >= 101)
                 {
                     player.transform.localPosition = new Vector3(activeController.transform.localPosition.x, activeController.transform.localPosition.z, 0);
@@ -116,7 +116,7 @@ public class Minimap : MonoBehaviour
                     player.transform.localPosition = new Vector3(activeController.transform.localPosition.x, activeController.transform.localPosition.z, 0);
                 }
                 break;
-            case 2:
+            case 4:
                 player.transform.localPosition = new Vector3(activeController.transform.localPosition.z, activeController.transform.localPosition.x, 0);
                 break;
             default:
