@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/Minimap.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room/PuzzleObject.cs">
     <Files>
       <File FileName="Assets/Scripts/Puzzles/5/CheckAnswerFive.cs" Line="42" Column="23" />
       <File FileName="Assets/Scripts/Puzzles/5/FieldUnit.cs" />
@@ -7,11 +7,14 @@
       <File FileName="Assets/Scripts/System/GameLoaderEndgame.cs" />
       <File FileName="Assets/Scripts/System/Interactor.cs" />
       <File FileName="Assets/Scripts/Room/MessageObject.cs" />
-      <File FileName="Assets/Scripts/Room/PuzzleObject.cs" />
+      <File FileName="Assets/Scripts/Room/PuzzleObject.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Room/ActionObject.cs" />
-      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" Line="213" Column="53" />
-      <File FileName="Assets/Scripts/System/Inventory.cs" Line="82" Column="94" />
-      <File FileName="Assets/Scripts/System/Minimap.cs" Line="119" Column="19" />
+      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" />
+      <File FileName="Assets/Scripts/System/Inventory.cs" />
+      <File FileName="Assets/Scripts/System/Minimap.cs" Line="109" Column="20" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" />
+      <File FileName="Assets/Scripts/Room/MapUpdater.cs" />
+      <File FileName="Assets/Scripts/Room/DirectionUpdater.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,10 +29,10 @@
                   <Node name="4" expanded="True" />
                   <Node name="5" expanded="True" />
                 </Node>
-                <Node name="Room" expanded="True" />
-                <Node name="System" expanded="True">
-                  <Node name="Minimap.cs" selected="True" />
+                <Node name="Room" expanded="True">
+                  <Node name="PuzzleObject.cs" selected="True" />
                 </Node>
+                <Node name="System" expanded="True" />
                 <Node name="Tutorial" expanded="True" />
               </Node>
             </Node>
@@ -41,7 +44,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8dfb2733-b4f0-405a-a54d-fb0a4482b5d1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e328989d-5c29-441d-9c85-173427ea18ff" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
