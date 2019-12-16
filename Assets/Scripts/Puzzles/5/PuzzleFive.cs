@@ -16,7 +16,7 @@ public class PuzzleFive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerData.gamestate = 5;
+        PlayerData.gamestate = 6;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
