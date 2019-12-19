@@ -1,23 +1,9 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room/ActionObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/3R/CheckAnswerThreeRemake.cs">
     <Files>
-      <File FileName="Assets/Scripts/Puzzles/5/CheckAnswerFive.cs" Line="42" Column="23" />
-      <File FileName="Assets/Scripts/Puzzles/5/FieldUnit.cs" />
-      <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" />
-      <File FileName="Assets/Scripts/System/GameLoaderEndgame.cs" />
-      <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Room/MessageObject.cs" />
-      <File FileName="Assets/Scripts/Room/PuzzleObject.cs" />
-      <File FileName="Assets/Scripts/Room/ActionObject.cs" Line="70" Column="76" />
-      <File FileName="Assets/Scripts/Tutorial/Tutorial.cs" />
-      <File FileName="Assets/Scripts/System/Inventory.cs" />
-      <File FileName="Assets/Scripts/System/Minimap.cs" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" />
-      <File FileName="Assets/Scripts/Room/MapUpdater.cs" />
-      <File FileName="Assets/Scripts/Room/DirectionUpdater.cs" />
-      <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" />
-      <File FileName="Assets/Scripts/Puzzles/3/PuzzleThree.cs" />
-      <File FileName="Assets/Scripts/Room/TransitionObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/3R/Area.cs" Line="9" Column="28" />
+      <File FileName="Assets/Scripts/Puzzles/3R/CheckAnswerThreeRemake.cs" Line="42" Column="30" />
+      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" Line="19" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,12 +15,14 @@
                   <Node name="1" expanded="True" />
                   <Node name="2" expanded="True" />
                   <Node name="3" expanded="True" />
+                  <Node name="3R" expanded="True">
+                    <Node name="CheckAnswerThreeRemake.cs" selected="True" />
+                  </Node>
                   <Node name="4" expanded="True" />
                   <Node name="5" expanded="True" />
+                  <Node name="5R" expanded="True" />
                 </Node>
-                <Node name="Room" expanded="True">
-                  <Node name="ActionObject.cs" selected="True" />
-                </Node>
+                <Node name="Room" expanded="True" />
                 <Node name="System" expanded="True" />
                 <Node name="Tutorial" expanded="True" />
               </Node>
@@ -47,7 +35,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ff1fdbe3-f1aa-4872-8e60-68c2d6502b72" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="354f25fa-d47a-4e56-8cc2-dbeb04c7914e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

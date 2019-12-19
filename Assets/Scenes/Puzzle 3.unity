@@ -403,12 +403,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 647367778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d40dc1cc4ed24ffe85e64d786b7382c, type: 3}
+  m_Script: {fileID: 11500000, guid: 06370cb9b34554a6ea04f650db6fae80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  field: {fileID: 1354518305}
-  parent: {fileID: 647367779}
-  buttonAssign: {fileID: 900183408}
 --- !u!1001 &728758973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,7 +773,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 900183403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567e6c557bc7f4fdaa69196b7825c496, type: 3}
+  m_Script: {fileID: 11500000, guid: 022aeda77114a410aaa5971594119730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &900183406
@@ -858,7 +855,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 900183405}
+      - m_Target: {fileID: 0}
         m_MethodName: Execute
         m_Mode: 1
         m_Arguments:
@@ -1517,13 +1514,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354518303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4ca0fac7b8e4c61a217d85683fa0ab, type: 3}
+  m_Script: {fileID: 11500000, guid: a6d7f5903574346e2922ce4370bfa78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  canJumpTo: 0
-  HasVisited: 0
 --- !u!61 &1354518306
 BoxCollider2D:
   m_ObjectHideFlags: 0
