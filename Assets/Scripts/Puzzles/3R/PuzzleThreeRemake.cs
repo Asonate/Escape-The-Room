@@ -69,12 +69,12 @@ public class PuzzleThreeRemake : MonoBehaviour
             f.isTarget = false;
         }
 
-        fields[9,2].canAccess = false;
-        fields[9,2].canAccess = false;
-        fields[10,2].canAccess = false;
-        fields[10,3].canAccess = false;
-        fields[11,2].canAccess = false;
-        fields[11,3].canAccess = false;
+        fields[9, 2].canAccess = false;
+        fields[9, 2].canAccess = false;
+        fields[10, 2].canAccess = false;
+        fields[10, 3].canAccess = false;
+        fields[11, 2].canAccess = false;
+        fields[11, 3].canAccess = false;
         fields[4, 5].canAccess = false;
         fields[5, 5].canAccess = false;
         fields[4, 4].canAccess = false;
@@ -93,7 +93,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         fields[3, 2].canAccess = false;
 
 
-        fields[12,4].isTarget = true;
+        fields[12, 4].isTarget = true;
 
         ColorPlayArea();
     }
@@ -102,7 +102,7 @@ public class PuzzleThreeRemake : MonoBehaviour
     {
         foreach (Area f in fields)
         {
-            if(f.canAccess)
+            if (f.canAccess)
             {
                 if (f.isTarget)
                 {
@@ -115,29 +115,38 @@ public class PuzzleThreeRemake : MonoBehaviour
             } else
             {
                 f.GetComponent<Image>().color = Color.grey;
-            }   
+            }
         }
     }
 
     public void AddForwardOrder()
     {
-        orderImages.Enqueue(Instantiate(forward, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
-        orders.Enqueue(MoveOrder.forward);
-        queuePos += .1f;
+        if (canExecute)
+        {
+            orderImages.Enqueue(Instantiate(forward, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orders.Enqueue(MoveOrder.forward);
+            queuePos += .1f;
+        }
     }
 
     public void AddLeftOrder()
     {
-        orderImages.Enqueue(Instantiate(left, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
-        orders.Enqueue(MoveOrder.left);
-        queuePos += .1f;
+        if (canExecute)
+        {
+            orderImages.Enqueue(Instantiate(left, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orders.Enqueue(MoveOrder.left);
+            queuePos += .1f;
+        }
     }
 
     public void AddRightOrder()
     {
-        orderImages.Enqueue(Instantiate(right, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
-        orders.Enqueue(MoveOrder.right);
-        queuePos += .1f;
+        if (canExecute)
+        {
+            orderImages.Enqueue(Instantiate(right, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orders.Enqueue(MoveOrder.right);
+            queuePos += .1f;
+        }
     }
 
     public void Execute()
