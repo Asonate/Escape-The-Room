@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Puzzles\3\PuzzleThree.cs" />
     <Compile Include="Assets\Scripts\Puzzles\3R\Area.cs" />
     <Compile Include="Assets\Scripts\Puzzles\3R\CheckAnswerThreeRemake.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\3R\MoveOrder.cs" />
     <Compile Include="Assets\Scripts\Puzzles\3R\PuzzleThreeRemake.cs" />
     <Compile Include="Assets\Scripts\Puzzles\4\CheckAnswerFour.cs" />
     <Compile Include="Assets\Scripts\Puzzles\4\PlayField.cs" />
