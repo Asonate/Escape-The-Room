@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\AssetStoreOriginals\Prototyping Assets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\AssetStoreOriginals\SnapsArtOffice\Scripts\LightmappedLOD.cs" />
+    <Compile Include="Assets\AssetStoreOriginals\SnapsArtOffice\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\Bucket.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\BucketOuter.cs" />
     <Compile Include="Assets\Scripts\Puzzles\1\CheckAnswerOne.cs" />
