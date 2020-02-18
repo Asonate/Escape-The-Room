@@ -8,49 +8,19 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerData : MonoBehaviour
 {
     public static bool currentlyInMenu;
-    public static int gamestate;
-    public static List<int> clickedObjects = new List<int>();
-    public static int objectIndex;
 
-    [SerializeField] FirstPersonController[] firstPersonControllers;
-    static FirstPersonController activeController;
+    public static bool[] itemsFound = { true, false, false, false };
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    public static int countKeplerTickets;
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
-    {
-        foreach (FirstPersonController f in firstPersonControllers)
-        {
-            f.gameObject.SetActive(false);
-        }
-
-        if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
-        {
-            if (firstPersonControllers.Length >= gamestate)
-            {
-                firstPersonControllers[gamestate].gameObject.SetActive(true);
-                activeController = firstPersonControllers[gamestate];
-            }
-        }
-    }
-
-    public static FirstPersonController GetActiveController()
-    {
-        return activeController;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    public static bool[] puzzlesCleared = { false, false, false, false };
 
     public void ResetData()
     {
-        clickedObjects.Clear();
-        gamestate = 0;
         currentlyInMenu = false;
-    }
+        itemsFound = new bool[] { true, false, false, false };
+        countKeplerTickets = 0;
+        puzzlesCleared = new bool[] { false, false, false, false };
+
+}
 }

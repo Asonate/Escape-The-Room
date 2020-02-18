@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.render-pipelines.lightweight@6.9.2/Shaders/Lit.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/PauseMenu.cs">
     <Files>
-      <File FileName="Assets/Scripts/Puzzles/5R/CheckAnswerFiveRemake.cs" Line="5" Column="29" />
-      <File FileName="Assets/Scripts/Puzzles/5R/AreaBlock.cs" />
-      <File FileName="Assets/Scripts/Puzzles/5R/PuzzleFiveRemake.cs" />
-      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" />
-      <File FileName="Library/PackageCache/com.unity.render-pipelines.lightweight@6.9.2/Shaders/Lit.shader" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="59" Column="73" />
+      <File FileName="Assets/Scripts/System/InventoryEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/GameLoader.cs" Line="29" Column="6" />
+      <File FileName="Assets/Scripts/System/GameLoaderEndgame.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/System/PauseEventHandler.cs" Line="16" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,20 +14,10 @@
           <Node name="Escape The Room" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Puzzles" expanded="True">
-                  <Node name="1" expanded="True" />
-                  <Node name="2" expanded="True" />
-                  <Node name="3" expanded="True" />
-                  <Node name="3R" expanded="True" />
-                  <Node name="4" expanded="True" />
-                  <Node name="5" expanded="True" />
-                  <Node name="5R" expanded="True">
-                    <Node name="CheckAnswerFiveRemake.cs" selected="True" />
-                  </Node>
+                <Node name="Main New" expanded="True" />
+                <Node name="System" expanded="True">
+                  <Node name="PauseMenu.cs" selected="True" />
                 </Node>
-                <Node name="Room" expanded="True" />
-                <Node name="System" expanded="True" />
-                <Node name="Tutorial" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -37,7 +28,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a501f148-6265-4f0b-a81c-4d33a1e48a99" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="85f44b83-c5d5-489b-be57-e5c56e8dc29c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -32,8 +32,6 @@ public class PuzzleThreeRemake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerData.gamestate = 3;
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

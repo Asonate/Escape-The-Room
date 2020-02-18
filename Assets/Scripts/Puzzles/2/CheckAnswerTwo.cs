@@ -36,7 +36,7 @@ public class CheckAnswerTwo : MonoBehaviour
 
         if (PuzzleTwo.CheckAnswer())
         {
-            SceneManager.LoadScene("Main 1");
+            SceneManager.LoadScene("Main New");
         }
         else
         {

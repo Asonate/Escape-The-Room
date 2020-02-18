@@ -17,8 +17,6 @@ public class GameLoaderEndgame : MonoBehaviour
         try
         {
             FindObjectOfType<PlayerData>().ResetData();
-            Destroy(FindObjectOfType<SystemProperties>().gameObject);
-            Destroy(FindObjectOfType<NoReload>().gameObject);
         }
         catch
         {

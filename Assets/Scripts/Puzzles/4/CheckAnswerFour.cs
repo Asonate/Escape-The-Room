@@ -35,7 +35,7 @@ public class CheckAnswerFour : MonoBehaviour
 
         if (PuzzleFour.CheckAnswer())
         {
-            SceneManager.LoadScene("Main 2");
+            SceneManager.LoadScene("Main New");
         }
         else
         {

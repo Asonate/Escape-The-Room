@@ -37,11 +37,10 @@ public class Interactor : MonoBehaviour
         {
             GameObject hitObj = hit.transform.gameObject;
             GameObject hitFX = Instantiate(onHit, hit.point, Quaternion.LookRotation(hit.normal), gameObject.transform);
-            ClickableObject target = hit.transform.GetComponent<ClickableObject>();
+            InteractionObject target = hit.transform.GetComponent<InteractionObject>();
             if (target)
             {
                 hitFX.GetComponent<ParticleSystem>().startColor = target.GetColor();
-                target.Highlight();
             }
             else
             {
@@ -55,12 +54,7 @@ public class Interactor : MonoBehaviour
     {
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 5))
         {
-            DirectionUpdater direction = hit.transform.GetComponent<DirectionUpdater>();
-            if (direction)
-            {
-                direction.Execute();
-            }
-            ClickableObject target = hit.transform.GetComponent<ClickableObject>();
+            InteractionObject target = hit.transform.GetComponent<InteractionObject>();
             if (target)
             {
                 target.Execute();

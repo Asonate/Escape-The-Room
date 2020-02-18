@@ -9,8 +9,6 @@ public class GameLoader : MonoBehaviour
     {
         try {
             FindObjectOfType<PlayerData>().ResetData();
-            Destroy(FindObjectOfType<SystemProperties>().gameObject);
-            Destroy(FindObjectOfType<NoReload>().gameObject);
         }
         catch
         {
@@ -27,12 +25,7 @@ public class GameLoader : MonoBehaviour
     public void LoadGame()
     {
 
-        SceneManager.LoadScene("Main 1");
-    }
-
-    public void LoadTutorial()
-    {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Main New");
     }
 
     public void ExitGame()

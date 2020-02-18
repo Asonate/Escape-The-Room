@@ -3,46 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenu : MonoBehaviour
 {
-    FirstPersonController firstPersonController;
-    [SerializeField] Canvas pauseCanvas;
+    [SerializeField] FirstPersonController player;
+    [SerializeField] Canvas canvas;
     public bool currentlyActive;
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
-    {
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
-        DisablePauseMenu();
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    [SerializeField] Image[] items;
+    [SerializeField] Text ticketCount;
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-        pauseCanvas.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if ((currentlyActive && PlayerData.currentlyInMenu) || !PlayerData.currentlyInMenu)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 if (currentlyActive)
                 {
@@ -58,32 +40,34 @@ public class PauseMenu : MonoBehaviour
 
     private void EnablePauseMenu()
     {
-        pauseCanvas.gameObject.SetActive(true);
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = false;
-        }
+        //Menu
+        canvas.gameObject.SetActive(true);
+        player.mouseLookEnabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
         currentlyActive = true;
         PlayerData.currentlyInMenu = true;
+
+        //Inventory
+        for(int i = 1; i <= 3; i++)
+        {
+            if (PlayerData.itemsFound[i]) items[i-1].gameObject.SetActive(false);
+        }
+        if (PlayerData.countKeplerTickets > 0) {
+            items[3].gameObject.SetActive(false);
+            ticketCount.text = PlayerData.countKeplerTickets.ToString();
+        }
+
+        //Clues
     }
 
     public void DisablePauseMenu()
     {
-        pauseCanvas.gameObject.SetActive(false);
-        firstPersonController = FindObjectOfType<FirstPersonController>();
-        if (firstPersonController)
-        {
-            firstPersonController.mouseLookEnabled = true;
-        }
-        if (FindObjectOfType<SceneInformation>().sceneType == SceneType.Room)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
-        }
+        canvas.gameObject.SetActive(false);
+        player.mouseLookEnabled = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
         Time.timeScale = 1;
         currentlyActive = false;
         PlayerData.currentlyInMenu = false;

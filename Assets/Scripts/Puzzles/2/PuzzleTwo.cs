@@ -17,8 +17,6 @@ public class PuzzleTwo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerData.gamestate = 2;
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

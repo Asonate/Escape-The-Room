@@ -35,7 +35,7 @@ public class CheckAnswerThreeRemake : MonoBehaviour
 
         if (PuzzleThreeRemake.CheckAnswer())
         {
-            SceneManager.LoadScene("Main 1");
+            SceneManager.LoadScene("Main New");
         }
         else
         {
