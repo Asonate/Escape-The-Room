@@ -25,9 +25,9 @@ public class DisplayMessageObject : InteractionObject
 
 	public override void Execute()
 	{
-		if (!PlayerData.currentlyInMenu)
-		{
-			StartCoroutine(ObjectAction());
+        if (!(PlayerData.currentlyInMenu || PlayerData.currentlyInPuzzle))
+        {
+            StartCoroutine(ObjectAction());
 		}
 	}
 

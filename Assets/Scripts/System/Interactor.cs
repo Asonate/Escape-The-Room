@@ -17,7 +17,7 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PlayerData.currentlyInMenu)
+        if (!(PlayerData.currentlyInMenu || PlayerData.currentlyInPuzzle))
         {
             if (Input.GetButtonDown("Fire2"))
             {

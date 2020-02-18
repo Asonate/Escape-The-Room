@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PuzzleThreeRemake : MonoBehaviour
 {
+    [SerializeField] FirstPersonController controller;
     [SerializeField] Area field;
     [SerializeField] Transform parent;
     [SerializeField] Image playerBase;
@@ -32,22 +34,27 @@ public class PuzzleThreeRemake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        controller.mouseLookEnabled = false;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Time.timeScale = 0;
+
+        PlayerData.currentlyInPuzzle = true;
 
         button = buttonAssign;
         for (int i = 0; i < 14; i++)
         {
             for (int j = 0; j < 6; j++)
             {
-                fields[i, j] = Instantiate(field, new Vector3(-8.2f + (i * 1f), -4.6f + (j * 1f), 0), Quaternion.identity, parent);
+                fields[i, j] = Instantiate(field, new Vector3(125 + (i * 100f), 75 + (j * 100f), 0), Quaternion.identity, parent);
                 fields[i, j].name = "[" + i + "," + j + "]";
                 fields[i, j].x = i;
                 fields[i, j].y = j;
             }
         }
 
-        player = Instantiate(playerBase, new Vector3(-8.2f + (playerX * 1f), -4.6f + (playerY * 1f), 0), Quaternion.identity, parent);
+        player = Instantiate(playerBase, new Vector3(125 + (playerX * 100f), 75 + (playerY * 100f), 0), Quaternion.identity, parent);
         player.name = "player";
 
         currentX = playerX;
@@ -121,7 +128,7 @@ public class PuzzleThreeRemake : MonoBehaviour
     {
         if (canExecute)
         {
-            orderImages.Enqueue(Instantiate(forward, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orderImages.Enqueue(Instantiate(forward, new Vector3(1550f + (queuePos * 100f), 550, 0), Quaternion.identity, parent));
             orders.Enqueue(MoveOrder.forward);
             queuePos += .1f;
         }
@@ -131,7 +138,7 @@ public class PuzzleThreeRemake : MonoBehaviour
     {
         if (canExecute)
         {
-            orderImages.Enqueue(Instantiate(left, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orderImages.Enqueue(Instantiate(left, new Vector3(1550f + (queuePos * 100f), 550, 0), Quaternion.identity, parent));
             orders.Enqueue(MoveOrder.left);
             queuePos += .1f;
         }
@@ -141,7 +148,7 @@ public class PuzzleThreeRemake : MonoBehaviour
     {
         if (canExecute)
         {
-            orderImages.Enqueue(Instantiate(right, new Vector3(6.25f + (queuePos * 1f), 0, 0), Quaternion.identity, parent));
+            orderImages.Enqueue(Instantiate(right, new Vector3(1550f + (queuePos * 100f), 550, 0), Quaternion.identity, parent));
             orders.Enqueue(MoveOrder.right);
             queuePos += .1f;
         }
@@ -161,17 +168,17 @@ public class PuzzleThreeRemake : MonoBehaviour
         foreach (MoveOrder m in orders)
         {
             Image tempImage = orderImages.Dequeue();
-            tempImage.transform.position = new Vector3(tempImage.transform.position.x - .5f, tempImage.transform.position.y, tempImage.transform.position.z);
+            tempImage.transform.position = new Vector3(tempImage.transform.position.x - .5f * 100, tempImage.transform.position.y, tempImage.transform.position.z);
             foreach(Image i in orderImages)
             {
-                i.transform.position = new Vector3(i.transform.position.x - .1f, i.transform.position.y, i.transform.position.z);
+                i.transform.position = new Vector3(i.transform.position.x - .1f * 100, i.transform.position.y, i.transform.position.z);
             }
             Destroy(tempImage.gameObject);
 
             switch (m)
             {
                 case MoveOrder.forward:
-                    player.transform.position = new Vector3(player.transform.position.x + directions[currentDir].x, player.transform.position.y + directions[currentDir].y);
+                    player.transform.position = new Vector3(player.transform.position.x + directions[currentDir].x * 100, player.transform.position.y + directions[currentDir].y * 100);
                     currentX += (int)directions[currentDir].x;
                     currentY += (int)directions[currentDir].y;
                     break;
@@ -187,7 +194,7 @@ public class PuzzleThreeRemake : MonoBehaviour
             if (currentX > 13 || currentX < 0 || currentY > 5 || currentY < 0 || !fields[currentX, currentY].canAccess)
             {
                 yield return new WaitForSecondsRealtime(.5f);
-                player.transform.position = new Vector3(player.transform.position.x - directions[currentDir].x * .75f, player.transform.position.y - directions[currentDir].y * .75f);
+                player.transform.position = new Vector3(player.transform.position.x - directions[currentDir].x * .75f * 100, player.transform.position.y - directions[currentDir].y * .75f * 100);
                 break;
             }
             if (fields[currentX, currentY].isTarget)
@@ -211,7 +218,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         orders = new Queue<MoveOrder>();
         queuePos = 0.0f;
         canExecute = true;
-        player.transform.position = new Vector3(-8.2f + (1 * 1f), -4.6f + (4 * 1f), 0);
+        player.transform.position = new Vector3(125f + (1 * 100f), 75 + (4 * 100f), 0);
         player.transform.rotation = Quaternion.identity;
         currentDir = 0;
         currentX = 1;
