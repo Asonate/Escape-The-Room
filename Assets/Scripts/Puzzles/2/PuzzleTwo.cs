@@ -10,6 +10,13 @@ public class PuzzleTwo : MonoBehaviour
     [SerializeField] Transform parent;
     [SerializeField] Text textbase;
 
+    [SerializeField] int puzzleId;
+    [SerializeField] Canvas puzzle;
+
+    [SerializeField] Canvas canvas;
+    [SerializeField] Image image;
+    [SerializeField] Text[] texts;
+
     static FieldBlock[,] field = new FieldBlock[5, 5];
     static Text text;
     static int placeableQueens = 5;
@@ -17,6 +24,10 @@ public class PuzzleTwo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+        foreach (Text t in texts) t.gameObject.SetActive(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -74,7 +85,7 @@ public class PuzzleTwo : MonoBehaviour
         UpdateLabel();
     }
 
-    public static bool CheckAnswer()
+    public void CheckAnswer()
     {
         foreach (FieldBlock f in field)
         {
@@ -125,9 +136,57 @@ public class PuzzleTwo : MonoBehaviour
         {
             if ((!f.inCheck && !f.queenPlaced) || (f.inCheck && f.queenPlaced))
             {
-                return false;
+                return;
             }
         }
-        return true;
+        ClearPuzzle();
+    }
+
+    public void ClearPuzzle()
+    {
+        if (!PlayerData.currentlyInMenu)
+        {
+            StartCoroutine(DisplayMessage());
+        }
+    }
+
+    public IEnumerator DisplayMessage()
+    {
+        PlayerData.currentlyInMenu = true;
+
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        foreach (Text t in texts)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
+
+        PlayerData.countKeplerTickets++;
+        PlayerData.puzzlesCleared[puzzleId] = true;
+        PlayerData.currentlyInPuzzle = false;
+        puzzle.gameObject.SetActive(false);
+    }
+
+    public IEnumerator WaitForPlayerInput()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+            {
+                done = true;
+            }
+            yield return null;
+        }
     }
 }

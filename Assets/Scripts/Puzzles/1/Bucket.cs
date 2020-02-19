@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Bucket : MonoBehaviour
 {
+    [SerializeField] PuzzleOne puzzle;
+
     public Text text;
     public int current = 0;
     public int capacity;
@@ -26,7 +28,7 @@ public class Bucket : MonoBehaviour
         }
         this.UpdateLabel();
         b.UpdateLabel();
-        if (PuzzleOne.CheckAnswer()) PuzzleOne.ClearPuzzle();
+        if (puzzle.CheckAnswer()) puzzle.ClearPuzzle();
     }
 
     public void UpdateLabel()

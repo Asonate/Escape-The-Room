@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -15,8 +16,12 @@ public class PuzzleThreeRemake : MonoBehaviour
     [SerializeField] Image left;
     [SerializeField] Image right;
 
-    public Button buttonAssign;
-    public static Button button;
+    [SerializeField] int puzzleId;
+    [SerializeField] Canvas puzzle;
+
+    [SerializeField] Canvas canvas;
+    [SerializeField] Image image;
+    [SerializeField] Text[] texts;
 
     static float queuePos;
     static bool canExecute = true;
@@ -34,6 +39,10 @@ public class PuzzleThreeRemake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+        foreach (Text t in texts) t.gameObject.SetActive(false);
+
         controller.mouseLookEnabled = false;
 
         Cursor.lockState = CursorLockMode.None;
@@ -42,7 +51,6 @@ public class PuzzleThreeRemake : MonoBehaviour
 
         PlayerData.currentlyInPuzzle = true;
 
-        button = buttonAssign;
         for (int i = 0; i < 14; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -206,7 +214,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         }
     }
 
-    public System.Collections.IEnumerator Wait()
+    public IEnumerator Wait()
     {
         yield return new WaitForSecondsRealtime(.25f);
     }
@@ -225,20 +233,51 @@ public class PuzzleThreeRemake : MonoBehaviour
         currentY = 4;
     }
 
-    public static bool CheckAnswer()
+    public void ClearPuzzle()
     {
-        if (currentX > 13 || currentX < 0 || currentY > 5 || currentY < 0)
+        if (!PlayerData.currentlyInMenu)
         {
-            return false;
-        }
-        else
-        {
-            return fields[currentX, currentY].isTarget;
+            StartCoroutine(DisplayMessage());
         }
     }
 
-    public static void ClearPuzzle()
+    public IEnumerator DisplayMessage()
     {
-        button.onClick.Invoke();
+        PlayerData.currentlyInMenu = true;
+
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        foreach (Text t in texts)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
+
+        PlayerData.countKeplerTickets++;
+        PlayerData.puzzlesCleared[puzzleId] = true;
+        PlayerData.currentlyInPuzzle = false;
+        puzzle.gameObject.SetActive(false);
+    }
+
+    public IEnumerator WaitForPlayerInput()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+            {
+                done = true;
+            }
+            yield return null;
+        }
     }
 }

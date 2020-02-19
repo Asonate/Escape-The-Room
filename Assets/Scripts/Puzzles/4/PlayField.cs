@@ -2,6 +2,8 @@
 
 public class PlayField : MonoBehaviour
 {
+    [SerializeField] PuzzleFour puzzle;
+
     public int x;
     public int y;
     public bool hasMarble;
@@ -12,15 +14,15 @@ public class PlayField : MonoBehaviour
     {
         if (!PlayerData.currentlyInMenu && this.isPlayArea)
         {
-            if (!PuzzleFour.fieldSelected && this.hasMarble)
+            if (!puzzle.fieldSelected && this.hasMarble)
             {
-                PuzzleFour.ShowOptions(x, y);
+                puzzle.ShowOptions(x, y);
             } else if (this.canJumpTo && !this.hasMarble)
             {
-                PuzzleFour.JumpField(x, y);
-            } else if (this == PuzzleFour.selectedField)
+                puzzle.JumpField(x, y);
+            } else if (this == puzzle.selectedField)
             {
-                PuzzleFour.FreeSelection();
+                puzzle.FreeSelection();
             }
         }
     }

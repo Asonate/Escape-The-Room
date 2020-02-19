@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PuzzleFour : MonoBehaviour
@@ -6,20 +7,27 @@ public class PuzzleFour : MonoBehaviour
     [SerializeField] PlayField field;
     [SerializeField] Transform parent;
 
-    public Button buttonAssign;
-    public static Button button;
+    [SerializeField] int puzzleId;
+    [SerializeField] Canvas puzzle;
 
-    static PlayField[,] fields = new PlayField[7,7];
-    public static PlayField selectedField;
-    public static bool fieldSelected;
+    [SerializeField] Canvas canvas;
+    [SerializeField] Image image;
+    [SerializeField] Text[] texts;
+
+    static PlayField[,] fields = new PlayField[7, 7];
+    public PlayField selectedField;
+    public bool fieldSelected;
 
     // Start is called before the first frame update
     void Start()
     {
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+        foreach (Text t in texts) t.gameObject.SetActive(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        button = buttonAssign;
         for (int i = 0; i < 7; i++)
         {
             for (int j = 0; j < 7; j++)
@@ -38,7 +46,7 @@ public class PuzzleFour : MonoBehaviour
         Destroy(field.gameObject);
     }
 
-    private static void SetupPlayArea()
+    private void SetupPlayArea()
     {
         foreach (PlayField f in fields)
         {
@@ -64,7 +72,7 @@ public class PuzzleFour : MonoBehaviour
         fields[5, 1].isPlayArea = false;
     }
 
-    private static void SetupMarbles()
+    private void SetupMarbles()
     {
         fields[3, 5].hasMarble = true;
         fields[2, 4].hasMarble = true;
@@ -74,9 +82,9 @@ public class PuzzleFour : MonoBehaviour
         fields[3, 2].hasMarble = true;
     }
 
-    private static void ColorPlayArea()
+    private void ColorPlayArea()
     {
-        foreach(PlayField f in fields)
+        foreach (PlayField f in fields)
         {
             f.GetComponent<Image>().color = Color.white;
             if (!f.isPlayArea) f.GetComponent<Image>().color = Color.gray;
@@ -84,17 +92,17 @@ public class PuzzleFour : MonoBehaviour
             if (f.hasMarble) f.GetComponent<Image>().color = Color.blue;
             if (f.canJumpTo) f.GetComponent<Image>().color = Color.green;
         }
-        if(selectedField) selectedField.GetComponent<Image>().color = Color.red;
+        if (selectedField) selectedField.GetComponent<Image>().color = Color.red;
     }
 
-    public static void ShowOptions(int x, int y)
+    public void ShowOptions(int x, int y)
     {
         fieldSelected = true;
         selectedField = fields[x, y];
 
-        if(x + 2 <= 6)
+        if (x + 2 <= 6)
         {
-            if(fields[x+1,y].hasMarble && !fields[x + 2, y].hasMarble && fields[x + 2, y].isPlayArea)
+            if (fields[x + 1, y].hasMarble && !fields[x + 2, y].hasMarble && fields[x + 2, y].isPlayArea)
             {
                 fields[x + 2, y].canJumpTo = true;
             }
@@ -123,7 +131,7 @@ public class PuzzleFour : MonoBehaviour
         ColorPlayArea();
     }
 
-    public static void FreeSelection()
+    public void FreeSelection()
     {
         selectedField = null;
         fieldSelected = false;
@@ -134,7 +142,7 @@ public class PuzzleFour : MonoBehaviour
         ColorPlayArea();
     }
 
-    public static void JumpField(int x, int y)
+    public void JumpField(int x, int y)
     {
         if (fields[x, y].canJumpTo)
         {
@@ -146,7 +154,7 @@ public class PuzzleFour : MonoBehaviour
         if (CheckAnswer()) ClearPuzzle();
     }
 
-    public static void ResetField()
+    public void ResetField()
     {
         selectedField = null;
         fieldSelected = false;
@@ -165,8 +173,51 @@ public class PuzzleFour : MonoBehaviour
         return count == 1;
     }
 
-    public static void ClearPuzzle()
+    public void ClearPuzzle()
     {
-        button.onClick.Invoke();
+        if (!PlayerData.currentlyInMenu)
+        {
+            StartCoroutine(DisplayMessage());
+        }
+    }
+
+    public IEnumerator DisplayMessage()
+    {
+        PlayerData.currentlyInMenu = true;
+
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        foreach (Text t in texts)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
+
+        PlayerData.countKeplerTickets++;
+        PlayerData.puzzlesCleared[puzzleId] = true;
+        PlayerData.currentlyInPuzzle = false;
+        puzzle.gameObject.SetActive(false);
+    }
+
+    public IEnumerator WaitForPlayerInput()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+            {
+                done = true;
+            }
+            yield return null;
+        }
     }
 }
