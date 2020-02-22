@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PuzzleTwo : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PuzzleTwo : MonoBehaviour
     [SerializeField] int puzzleId;
     [SerializeField] Canvas puzzle;
 
+    [SerializeField] FirstPersonController player;
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
     [SerializeField] Text[] texts;
@@ -73,7 +75,7 @@ public class PuzzleTwo : MonoBehaviour
         text.text = "Placed \nQueens \n" + (5 - placeableQueens) + " / 5";
     }
 
-    public static void ResetField()
+    public void ResetField()
     {
         foreach (FieldBlock f in field)
         {
@@ -165,6 +167,12 @@ public class PuzzleTwo : MonoBehaviour
 
             t.gameObject.SetActive(false);
         }
+
+        player.mouseLookEnabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Time.timeScale = 1;
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);

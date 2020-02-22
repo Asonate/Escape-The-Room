@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PuzzleOne : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PuzzleOne : MonoBehaviour
     [SerializeField] int puzzleId;
     [SerializeField] Canvas puzzle;
 
+    [SerializeField] FirstPersonController player;
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
     [SerializeField] Text[] texts;
@@ -44,7 +46,7 @@ public class PuzzleOne : MonoBehaviour
         foreach (Bucket b in buckets) b.UpdateLabel();
     }
 
-    public static void ResetPuzzle()
+    public void ResetPuzzle()
     {
         foreach (Bucket b in buckets)
         {
@@ -93,6 +95,12 @@ public class PuzzleOne : MonoBehaviour
 
             t.gameObject.SetActive(false);
         }
+
+        player.mouseLookEnabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Time.timeScale = 1;
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);

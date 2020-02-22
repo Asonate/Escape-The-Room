@@ -86,11 +86,14 @@ public class PuzzleLoaderObject : InteractionObject
             t.gameObject.SetActive(false);
         }
 
-        player.mouseLookEnabled = true;
+        if (PlayerData.puzzlesCleared[puzzleID] && PlayerData.itemsFound[requiredItem])
+        {
+            player.mouseLookEnabled = true;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = false;
-        Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+        }
 
         image.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);

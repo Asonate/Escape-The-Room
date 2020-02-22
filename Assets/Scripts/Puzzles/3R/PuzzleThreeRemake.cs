@@ -219,7 +219,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         yield return new WaitForSecondsRealtime(.25f);
     }
 
-    public static void ResetField()
+    public void ResetField()
     {
         foreach (Image i in orderImages) Destroy(i.gameObject);
         orderImages = new Queue<Image>();
@@ -256,6 +256,12 @@ public class PuzzleThreeRemake : MonoBehaviour
 
             t.gameObject.SetActive(false);
         }
+
+        controller.mouseLookEnabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Time.timeScale = 1;
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);

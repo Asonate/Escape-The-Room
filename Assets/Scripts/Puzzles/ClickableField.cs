@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class ClickableField : MonoBehaviour
 {
     [SerializeField] int puzzleId;
     [SerializeField] Canvas puzzle;
 
+    [SerializeField] FirstPersonController player;
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
     [SerializeField] Text[] texts;
+
+    bool closePuzzle;
 
     // Start is called before the first frame update
     public void Start()
@@ -20,17 +24,17 @@ public class ClickableField : MonoBehaviour
 
     public void ExitPuzzle()
     {
+        closePuzzle = true;
         PlayerData.currentlyInPuzzle = false;
         ShowText();
-        puzzle.gameObject.SetActive(false);
     }
 
     public void SkipPuzzle()
     {
+        closePuzzle = true;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         ShowText();
-        puzzle.gameObject.SetActive(false);
     }
 
     public void HideText()
@@ -43,11 +47,6 @@ public class ClickableField : MonoBehaviour
     public void ShowText()
     {
         if (!PlayerData.currentlyInMenu) {
-            foreach (ClickableField c in FindObjectsOfType<ClickableField>())
-            {
-                c.HideText();
-            }
-
             StartCoroutine(ObjectAction());
         }
     }
@@ -77,6 +76,18 @@ public class ClickableField : MonoBehaviour
         image.gameObject.SetActive(false);
 
         PlayerData.currentlyInMenu = false;
+
+        if(closePuzzle)
+        {
+            player.mouseLookEnabled = true;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+
+            closePuzzle = false;
+            puzzle.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator WaitForPlayerInput()

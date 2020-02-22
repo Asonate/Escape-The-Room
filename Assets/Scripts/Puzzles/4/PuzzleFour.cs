@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PuzzleFour : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PuzzleFour : MonoBehaviour
     [SerializeField] int puzzleId;
     [SerializeField] Canvas puzzle;
 
+    [SerializeField] FirstPersonController player;
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
     [SerializeField] Text[] texts;
@@ -196,6 +198,12 @@ public class PuzzleFour : MonoBehaviour
 
             t.gameObject.SetActive(false);
         }
+
+        player.mouseLookEnabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Time.timeScale = 1;
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
