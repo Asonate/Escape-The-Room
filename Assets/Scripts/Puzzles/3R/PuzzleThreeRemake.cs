@@ -55,14 +55,14 @@ public class PuzzleThreeRemake : MonoBehaviour
         {
             for (int j = 0; j < 6; j++)
             {
-                fields[i, j] = Instantiate(field, new Vector3(125 + (i * 100f), 75 + (j * 100f), 0), Quaternion.identity, parent);
+                fields[i, j] = Instantiate(field, new Vector3(125 + (i * 100f), 175 + (j * 100f), 0), Quaternion.identity, parent);
                 fields[i, j].name = "[" + i + "," + j + "]";
                 fields[i, j].x = i;
                 fields[i, j].y = j;
             }
         }
 
-        player = Instantiate(playerBase, new Vector3(125 + (playerX * 100f), 75 + (playerY * 100f), 0), Quaternion.identity, parent);
+        player = Instantiate(playerBase, new Vector3(125 + (playerX * 100f), 175 + (playerY * 100f), 0), Quaternion.identity, parent);
         player.name = "player";
 
         currentX = playerX;
@@ -226,7 +226,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         orders = new Queue<MoveOrder>();
         queuePos = 0.0f;
         canExecute = true;
-        player.transform.position = new Vector3(125f + (1 * 100f), 75 + (4 * 100f), 0);
+        player.transform.position = new Vector3(125f + (1 * 100f), 175 + (4 * 100f), 0);
         player.transform.rotation = Quaternion.identity;
         currentDir = 0;
         currentX = 1;

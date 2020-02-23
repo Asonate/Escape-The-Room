@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Puzzles/1/PuzzleOne.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/PauseMenu.cs">
     <Files>
       <File FileName="Assets/Scripts/Main New/ToggleStateObject.cs" Line="42" Column="1" />
-      <File FileName="Assets/Scripts/Main New/PuzzleLoaderObject.cs" Line="97" Column="1" />
+      <File FileName="Assets/Scripts/Main New/PuzzleLoaderObject.cs" Line="25" Column="10" />
       <File FileName="Assets/Scripts/Main New/FindItemObject.cs" />
-      <File FileName="Assets/Scripts/Main New/DisplayMessageObject.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Main New/DisplayMessageObject.cs" />
       <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" Line="260" Column="19" />
-      <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" Line="14" Column="51" />
+      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" />
+      <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" />
       <File FileName="Assets/Scripts/Puzzles/4/PlayField.cs" />
-      <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" Line="17" Column="34" />
+      <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" />
       <File FileName="Assets/Scripts/Puzzles/2/FieldBlock.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="16" Column="51" />
+      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" />
       <File FileName="Assets/Scripts/Puzzles/1/Bucket.cs" />
       <File FileName="Assets/Scripts/Puzzles/3R/Area.cs" />
-      <File FileName="Assets/Scripts/Puzzles/ClickableField.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/ClickableField.cs" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" />
+      <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" />
+      <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,14 +27,15 @@
               <Node name="Scripts" expanded="True">
                 <Node name="Main New" expanded="True" />
                 <Node name="Puzzles" expanded="True">
-                  <Node name="1" expanded="True">
-                    <Node name="PuzzleOne.cs" selected="True" />
-                  </Node>
+                  <Node name="1" expanded="True" />
                   <Node name="2" expanded="True" />
                   <Node name="3R" expanded="True" />
                   <Node name="4" expanded="True" />
+                  <Node name="5" expanded="True" />
                 </Node>
-                <Node name="System" expanded="True" />
+                <Node name="System" expanded="True">
+                  <Node name="PauseMenu.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -42,7 +46,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bf4b64d0-8e75-4580-b8f8-618a345de281" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a06550c2-c43d-4fd0-a832-fa8f150d0c78" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

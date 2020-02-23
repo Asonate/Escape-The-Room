@@ -34,7 +34,7 @@ public class PuzzleFour : MonoBehaviour
         {
             for (int j = 0; j < 7; j++)
             {
-                fields[i, j] = Instantiate(field, new Vector3(-2.7f + (i * .9f), -4.8f + (j * .9f), 0), Quaternion.identity, parent);
+                fields[i, j] = Instantiate(field, new Vector3(690 + (i * 90f), 425 + (j * 90f), 0), Quaternion.identity, parent);
                 fields[i, j].name = "[" + i + "," + j + "]";
                 fields[i, j].x = i;
                 fields[i, j].y = j;

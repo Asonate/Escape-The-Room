@@ -54,6 +54,7 @@ public class PuzzleLoaderObject : InteractionObject
 			yield return StartCoroutine(DisplayMessage(successTexts));
 			PlayerData.currentlyInMenu = false;
 
+            PlayerData.currentlyInPuzzle = true;
 			puzzle.gameObject.SetActive(true);
 		}
 		else

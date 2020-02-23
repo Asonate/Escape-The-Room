@@ -14,7 +14,7 @@ public class PlayerData : MonoBehaviour
 
     public static int countKeplerTickets;
 
-    public static bool[] puzzlesCleared = { false, false, false, false };
+    public static bool[] puzzlesCleared = { false, false, false, false, false };
 
     public void ResetData()
     {
@@ -22,7 +22,7 @@ public class PlayerData : MonoBehaviour
         currentlyInPuzzle = false;
         itemsFound = new bool[] { true, false, false, false };
         countKeplerTickets = 0;
-        puzzlesCleared = new bool[] { false, false, false, false };
+        puzzlesCleared = new bool[] { false, false, false, false, false };
 
 }
 }

@@ -42,10 +42,13 @@ public class PauseMenu : MonoBehaviour
     {
         //Menu
         canvas.gameObject.SetActive(true);
-        player.mouseLookEnabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0;
+        if (!PlayerData.currentlyInPuzzle)
+        {
+            player.mouseLookEnabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+        }
         currentlyActive = true;
         PlayerData.currentlyInMenu = true;
 
@@ -65,10 +68,13 @@ public class PauseMenu : MonoBehaviour
     public void DisablePauseMenu()
     {
         canvas.gameObject.SetActive(false);
-        player.mouseLookEnabled = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = false;
-        Time.timeScale = 1;
+        if (!PlayerData.currentlyInPuzzle)
+        {
+            player.mouseLookEnabled = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+        }
         currentlyActive = false;
         PlayerData.currentlyInMenu = false;
     }

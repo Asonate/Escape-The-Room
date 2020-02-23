@@ -37,7 +37,7 @@ public class PuzzleTwo : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                field[i, j] = Instantiate(fieldBlock, new Vector3(-2.2f + (i * 1.1f), -4f + (j * 1.1f), 0), Quaternion.identity, parent);
+                field[i, j] = Instantiate(fieldBlock, new Vector3(740 + (i * 110f), 550 + (j * 110f), 0), Quaternion.identity, parent);
                 field[i, j].name = "[" + i + "," + j + "]";
                 field[i, j].x = i;
                 field[i, j].y = j;
@@ -47,7 +47,7 @@ public class PuzzleTwo : MonoBehaviour
         Destroy(fieldBlock.gameObject);
 
         text = Instantiate(textbase, textbase.transform.position, Quaternion.identity, parent);
-        text.name = "QueenCount";
+        text.name = "CameraCount";
 
         Destroy(textbase.gameObject);
     }
@@ -72,7 +72,7 @@ public class PuzzleTwo : MonoBehaviour
 
     public static void UpdateLabel()
     {
-        text.text = "Placed \nQueens \n" + (5 - placeableQueens) + " / 5";
+        text.text = "Kameras \nPlatziert \n" + (5 - placeableQueens) + " / 5";
     }
 
     public void ResetField()
