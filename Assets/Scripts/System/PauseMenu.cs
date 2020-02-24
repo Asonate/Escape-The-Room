@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if ((currentlyActive && PlayerData.currentlyInMenu) || !PlayerData.currentlyInMenu)
+        if (((currentlyActive && PlayerData.currentlyInMenu) || !PlayerData.currentlyInMenu) && PlayerData.allowMenu)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {

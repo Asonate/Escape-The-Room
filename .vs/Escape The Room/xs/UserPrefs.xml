@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/PauseMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/GameLoader.cs">
     <Files>
       <File FileName="Assets/Scripts/Main New/ToggleStateObject.cs" Line="42" Column="1" />
-      <File FileName="Assets/Scripts/Main New/PuzzleLoaderObject.cs" Line="25" Column="10" />
-      <File FileName="Assets/Scripts/Main New/FindItemObject.cs" />
+      <File FileName="Assets/Scripts/Main New/PuzzleLoaderObject.cs" />
+      <File FileName="Assets/Scripts/Main New/FindItemObject.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Main New/DisplayMessageObject.cs" />
-      <File FileName="Assets/Scripts/System/Interactor.cs" />
+      <File FileName="Assets/Scripts/System/Interactor.cs" Line="20" Column="98" />
       <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" />
       <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" />
       <File FileName="Assets/Scripts/Puzzles/4/PlayField.cs" />
@@ -15,9 +15,12 @@
       <File FileName="Assets/Scripts/Puzzles/1/Bucket.cs" />
       <File FileName="Assets/Scripts/Puzzles/3R/Area.cs" />
       <File FileName="Assets/Scripts/Puzzles/ClickableField.cs" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" />
-      <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" />
-      <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="28" Column="31" />
+      <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" Line="157" Column="10" />
+      <File FileName="Assets/Scripts/System/PauseMenu.cs" Line="25" Column="93" />
+      <File FileName="Assets/Scripts/System/GameLoaderEndgame.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/PauseEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/System/GameLoader.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,7 +37,7 @@
                   <Node name="5" expanded="True" />
                 </Node>
                 <Node name="System" expanded="True">
-                  <Node name="PauseMenu.cs" selected="True" />
+                  <Node name="GameLoader.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

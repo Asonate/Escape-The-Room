@@ -17,6 +17,8 @@ public class PuzzleFive : MonoBehaviour
 
     [SerializeField] Text input;
 
+    [SerializeField] Canvas clearScreen;
+
     public int[] code = new int[4];
     int pos;
     int[] solution = { 1, 9, 6, 6 };
@@ -24,6 +26,7 @@ public class PuzzleFive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        clearScreen.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
         foreach (Text t in successText) t.gameObject.SetActive(false);
@@ -151,14 +154,7 @@ public class PuzzleFive : MonoBehaviour
             yield return WaitForPlayerInput();
 
             t.gameObject.SetActive(false);
-        }
-
-        player.mouseLookEnabled = true;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = false;
-        Time.timeScale = 1;
-        
+        }        
 
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
@@ -168,7 +164,8 @@ public class PuzzleFive : MonoBehaviour
         PlayerData.countKeplerTickets++;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
-        //loadend
+        PlayerData.allowMenu = false;
+        clearScreen.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
         
     }
