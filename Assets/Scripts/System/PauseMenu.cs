@@ -15,6 +15,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Image[] items;
     [SerializeField] Text ticketCount;
 
+    [SerializeField] Image[] clues;
+    [SerializeField] Image[] blocks;
+
     private void Start()
     {
         canvas.gameObject.SetActive(false);
@@ -63,6 +66,18 @@ public class PauseMenu : MonoBehaviour
         }
 
         //Clues
+        for (int i = 0; i <= 3; i++)
+        {
+            if (PlayerData.puzzlesCleared[i])
+            {
+                clues[i].gameObject.SetActive(true);
+                blocks[i].gameObject.SetActive(false);
+            } else
+            {
+                clues[i].gameObject.SetActive(false);
+                blocks[i].gameObject.SetActive(true);
+            }
+        }
     }
 
     public void DisablePauseMenu()

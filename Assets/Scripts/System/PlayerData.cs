@@ -10,6 +10,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] FirstPersonController player;
     [SerializeField] Canvas reticle;
 
+    public static bool clueShown;
     public static bool allowMenu = true;
     public static bool currentlyInMenu;
     public static bool currentlyInPuzzle;
@@ -28,6 +29,7 @@ public class PlayerData : MonoBehaviour
 
     public void ResetData()
     {
+        clueShown = false;
         allowMenu = true;
         currentlyInMenu = false;
         currentlyInPuzzle = false;

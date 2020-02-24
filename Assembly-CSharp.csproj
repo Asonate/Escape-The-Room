@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Puzzles\4\PuzzleFour.cs" />
     <Compile Include="Assets\Scripts\Puzzles\5\PuzzleFive.cs" />
     <Compile Include="Assets\Scripts\Puzzles\ClickableField.cs" />
+    <Compile Include="Assets\Scripts\System\ClickableInformationField.cs" />
     <Compile Include="Assets\Scripts\System\GameLoader.cs" />
     <Compile Include="Assets\Scripts\System\GameLoaderEndgame.cs" />
     <Compile Include="Assets\Scripts\System\Interactor.cs" />
