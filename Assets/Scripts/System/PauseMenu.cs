@@ -66,16 +66,11 @@ public class PauseMenu : MonoBehaviour
         }
 
         //Clues
-        for (int i = 0; i <= 3; i++)
+        for (int i = 0; i <= PlayerData.countPuzzlesCleared; i++)
         {
-            if (PlayerData.puzzlesCleared[i])
             {
                 clues[i].gameObject.SetActive(true);
                 blocks[i].gameObject.SetActive(false);
-            } else
-            {
-                clues[i].gameObject.SetActive(false);
-                blocks[i].gameObject.SetActive(true);
             }
         }
     }

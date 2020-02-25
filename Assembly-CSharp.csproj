@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\System\PauseEventHandler.cs" />
     <Compile Include="Assets\Scripts\System\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\System\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\System\Timer.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Unity Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />

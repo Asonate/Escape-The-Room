@@ -17,6 +17,7 @@ public class PuzzleFive : MonoBehaviour
 
     [SerializeField] Text input;
 
+    [SerializeField] Canvas timer;
     [SerializeField] Canvas clearScreen;
 
     public int[] code = new int[4];
@@ -165,6 +166,7 @@ public class PuzzleFive : MonoBehaviour
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         PlayerData.allowMenu = false;
+        Destroy(timer.gameObject);
         clearScreen.gameObject.SetActive(true);
         puzzle.gameObject.SetActive(false);
         

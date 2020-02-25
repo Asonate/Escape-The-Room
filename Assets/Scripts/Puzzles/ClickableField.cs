@@ -32,6 +32,7 @@ public class ClickableField : MonoBehaviour
     public void SkipPuzzle()
     {
         closePuzzle = true;
+        PlayerData.countPuzzlesCleared++;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         ShowText();

@@ -19,6 +19,7 @@ public class PlayerData : MonoBehaviour
     public static bool[] itemsFound = { true, false, false, false };
 
     public static int countKeplerTickets;
+    public static int countPuzzlesCleared = -1;
 
     public static bool[] puzzlesCleared = { false, false, false, false, false };
 
@@ -36,6 +37,7 @@ public class PlayerData : MonoBehaviour
         displayReticle = true;
         itemsFound = new bool[] { true, false, false, false };
         countKeplerTickets = 0;
+        countPuzzlesCleared = -1;
         puzzlesCleared = new bool[] { false, false, false, false, false };
 
         player.mouseLookEnabled = true;

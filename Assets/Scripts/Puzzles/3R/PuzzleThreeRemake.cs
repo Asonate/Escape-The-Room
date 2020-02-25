@@ -21,7 +21,8 @@ public class PuzzleThreeRemake : MonoBehaviour
 
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
-    [SerializeField] Text[] texts;
+    [SerializeField] Text[] successText;
+    [SerializeField] Text[] failureText;
 
     static float queuePos;
     static bool canExecute = true;
@@ -41,7 +42,8 @@ public class PuzzleThreeRemake : MonoBehaviour
     {
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
-        foreach (Text t in texts) t.gameObject.SetActive(false);
+        foreach (Text t in successText) t.gameObject.SetActive(false);
+        foreach (Text t in failureText) t.gameObject.SetActive(false);
 
         controller.mouseLookEnabled = false;
 
@@ -203,6 +205,7 @@ public class PuzzleThreeRemake : MonoBehaviour
             {
                 yield return new WaitForSecondsRealtime(.5f);
                 player.transform.position = new Vector3(player.transform.position.x - directions[currentDir].x * .75f * 100, player.transform.position.y - directions[currentDir].y * .75f * 100);
+                StartCoroutine(DisplayError());
                 break;
             }
             if (fields[currentX, currentY].isTarget)
@@ -233,6 +236,28 @@ public class PuzzleThreeRemake : MonoBehaviour
         currentY = 4;
     }
 
+    public IEnumerator DisplayError()
+    {
+        PlayerData.currentlyInMenu = true;
+
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        foreach (Text t in failureText)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
+    }
+
     public void ClearPuzzle()
     {
         if (!PlayerData.currentlyInMenu)
@@ -248,7 +273,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         canvas.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
 
-        foreach (Text t in texts)
+        foreach (Text t in successText)
         {
             t.gameObject.SetActive(true);
 
@@ -269,6 +294,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         PlayerData.currentlyInMenu = false;
 
         PlayerData.countKeplerTickets++;
+        PlayerData.countPuzzlesCleared++;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         puzzle.gameObject.SetActive(false);

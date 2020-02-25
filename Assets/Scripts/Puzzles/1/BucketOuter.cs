@@ -20,7 +20,7 @@ public class BucketOuter : MonoBehaviour
         selection.gameObject.SetActive(false);
     }
 
-    private void OnMouseDown()
+    public void BucketAction()
     {
         if (!PlayerData.currentlyInMenu)
         {

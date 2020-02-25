@@ -9,7 +9,7 @@ public class FieldBlock : MonoBehaviour
     public bool queenPlaced;
     public bool inCheck;
 
-    private void OnMouseDown()
+    public void FieldAction()
     {
         if (!PlayerData.currentlyInMenu)
         {

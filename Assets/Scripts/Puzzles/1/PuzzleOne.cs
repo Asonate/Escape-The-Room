@@ -108,6 +108,7 @@ public class PuzzleOne : MonoBehaviour
         PlayerData.currentlyInMenu = false;
 
         PlayerData.countKeplerTickets++;
+        PlayerData.countPuzzlesCleared++;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         puzzle.gameObject.SetActive(false);

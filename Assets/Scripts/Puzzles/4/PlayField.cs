@@ -10,7 +10,7 @@ public class PlayField : MonoBehaviour
     public bool canJumpTo;
     public bool isPlayArea;
 
-    private void OnMouseDown()
+    public void FieldAction()
     {
         if (!PlayerData.currentlyInMenu && this.isPlayArea)
         {

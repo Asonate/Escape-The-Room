@@ -17,7 +17,8 @@ public class PuzzleTwo : MonoBehaviour
     [SerializeField] FirstPersonController player;
     [SerializeField] Canvas canvas;
     [SerializeField] Image image;
-    [SerializeField] Text[] texts;
+    [SerializeField] Text[] successText;
+    [SerializeField] Text[] failureText;
 
     static FieldBlock[,] field = new FieldBlock[5, 5];
     static Text text;
@@ -28,7 +29,8 @@ public class PuzzleTwo : MonoBehaviour
     {
         canvas.gameObject.SetActive(false);
         image.gameObject.SetActive(false);
-        foreach (Text t in texts) t.gameObject.SetActive(false);
+        foreach (Text t in successText) t.gameObject.SetActive(false);
+        foreach (Text t in failureText) t.gameObject.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -87,6 +89,28 @@ public class PuzzleTwo : MonoBehaviour
         UpdateLabel();
     }
 
+    public IEnumerator DisplayError()
+    {
+        PlayerData.currentlyInMenu = true;
+
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        foreach (Text t in failureText)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        canvas.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
+
+        PlayerData.currentlyInMenu = false;
+    }
+
     public void CheckAnswer()
     {
         foreach (FieldBlock f in field)
@@ -138,7 +162,7 @@ public class PuzzleTwo : MonoBehaviour
         {
             if ((!f.inCheck && !f.queenPlaced) || (f.inCheck && f.queenPlaced))
             {
-                return;
+                StartCoroutine(DisplayError());
             }
         }
         ClearPuzzle();
@@ -159,7 +183,7 @@ public class PuzzleTwo : MonoBehaviour
         canvas.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
 
-        foreach (Text t in texts)
+        foreach (Text t in successText)
         {
             t.gameObject.SetActive(true);
 
@@ -180,6 +204,7 @@ public class PuzzleTwo : MonoBehaviour
         PlayerData.currentlyInMenu = false;
 
         PlayerData.countKeplerTickets++;
+        PlayerData.countPuzzlesCleared++;
         PlayerData.puzzlesCleared[puzzleId] = true;
         PlayerData.currentlyInPuzzle = false;
         puzzle.gameObject.SetActive(false);
