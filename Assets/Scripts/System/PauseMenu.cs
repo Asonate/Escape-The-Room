@@ -18,6 +18,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Image[] clues;
     [SerializeField] Image[] blocks;
 
+    [SerializeField] Canvas textCanvas;
+    [SerializeField] Image textbox;
+    [SerializeField] Text[] texts;
+
+    [SerializeField] GameObject[] clueVisuals;
+
+    bool firstTimeClue = true;
+
     private void Start()
     {
         canvas.gameObject.SetActive(false);
@@ -73,6 +81,12 @@ public class PauseMenu : MonoBehaviour
                 blocks[i].gameObject.SetActive(false);
             }
         }
+
+        if (firstTimeClue && PlayerData.countPuzzlesCleared >= 0)
+        {
+            firstTimeClue = false;
+            StartCoroutine(ExplainClues());
+        }
     }
 
     public void DisablePauseMenu()
@@ -85,7 +99,47 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = false;
             Time.timeScale = 1;
         }
+        foreach (GameObject g in clueVisuals) g.SetActive(false);
+        PlayerData.clueShown = false;
         currentlyActive = false;
         PlayerData.currentlyInMenu = false;
+    }
+
+    public virtual IEnumerator ExplainClues()
+    {
+        yield return DisplayMessage();
+    }
+
+    public IEnumerator DisplayMessage()
+    {
+        textCanvas.gameObject.SetActive(true);
+        textbox.gameObject.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(.025f);
+
+        foreach (Text t in texts)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        textbox.gameObject.SetActive(false);
+        textCanvas.gameObject.SetActive(false);
+    }
+
+    public IEnumerator WaitForPlayerInput()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                done = true;
+            }
+            yield return null;
+        }
     }
 }

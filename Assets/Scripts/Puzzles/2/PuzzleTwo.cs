@@ -39,7 +39,7 @@ public class PuzzleTwo : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                field[i, j] = Instantiate(fieldBlock, new Vector3(740 + (i * 110f), 550 + (j * 110f), 0), Quaternion.identity, parent);
+                field[i, j] = Instantiate(fieldBlock, new Vector3(740 + 260 + (i * 110f), 550 - 116 + (j * 110f), 0), Quaternion.identity, parent);
                 field[i, j].name = "[" + i + "," + j + "]";
                 field[i, j].x = i;
                 field[i, j].y = j;
@@ -65,7 +65,7 @@ public class PuzzleTwo : MonoBehaviour
         }
         else if (placeableQueens > 0)
         {
-            field[x, y].GetComponent<Image>().color = Color.red;
+            field[x, y].GetComponent<Image>().color = Color.black;
             field[x, y].queenPlaced = true;
             placeableQueens--;
             UpdateLabel();
@@ -74,7 +74,7 @@ public class PuzzleTwo : MonoBehaviour
 
     public static void UpdateLabel()
     {
-        text.text = "Kameras \nPlatziert \n" + (5 - placeableQueens) + " / 5";
+        text.text = "Kameras \nPlatziert \n" + (5 - placeableQueens) + "/5";
     }
 
     public void ResetField()
@@ -121,20 +121,20 @@ public class PuzzleTwo : MonoBehaviour
 
         foreach (FieldBlock f in field) if (f.queenPlaced)
             {
-                f.GetComponent<Image>().color = Color.red;
+                f.GetComponent<Image>().color = Color.black;
 
                 for (int i = 0; i < 5; i++)
                 {
                     if (i != f.y)
                     {
                         field[f.x, i].inCheck = true;
-                        field[f.x, i].GetComponent<Image>().color = Color.blue;
+                        field[f.x, i].GetComponent<Image>().color = Color.yellow;
                     }
 
                     if (i != f.x)
                     {
                         field[i, f.y].inCheck = true;
-                        field[i, f.y].GetComponent<Image>().color = Color.blue;
+                        field[i, f.y].GetComponent<Image>().color = Color.yellow;
                     }
                 }
                 for (int i = -4; i < 5; i++) if (i != 0)
@@ -142,20 +142,20 @@ public class PuzzleTwo : MonoBehaviour
                     if (f.x + i >= 0 && f.x + i < 5 && f.y + i >= 0 && f.y + i < 5)
                     {
                         field[f.x + i, f.y + i].inCheck = true;
-                        field[f.x + i, f.y + i].GetComponent<Image>().color = Color.blue;
+                        field[f.x + i, f.y + i].GetComponent<Image>().color = Color.yellow;
                     }
 
                     if (f.x + i >= 0 && f.x + i < 5 && f.y - i >= 0 && f.y - i < 5)
                     {
                         field[f.x + i, f.y - i].inCheck = true;
-                        field[f.x + i, f.y - i].GetComponent<Image>().color = Color.blue;
+                        field[f.x + i, f.y - i].GetComponent<Image>().color = Color.yellow;
                     }
                 }
             }
 
         foreach (FieldBlock f in field) if (f.queenPlaced && f.inCheck)
             {
-                f.GetComponent<Image>().color = Color.black;
+                f.GetComponent<Image>().color = Color.red;
             }
 
         foreach (FieldBlock f in field)

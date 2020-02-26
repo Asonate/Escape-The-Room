@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] FirstPersonController player;
     [SerializeField] Canvas reticle;
+
+    [SerializeField] Canvas canvas;
+    [SerializeField] Image image;
+    [SerializeField] Text[] texts;
+
 
     public static bool clueShown;
     public static bool allowMenu = true;
@@ -26,6 +32,59 @@ public class PlayerData : MonoBehaviour
     private void Start()
     {
         ResetData();
+        StartCoroutine(ObjectAction());
+    }
+
+    public virtual IEnumerator ObjectAction()
+    {
+        PlayerData.currentlyInMenu = true;
+        yield return DisplayMessage(texts);
+        PlayerData.currentlyInMenu = false;
+    }
+
+    public IEnumerator DisplayMessage(Text[] displayText)
+    {
+        canvas.gameObject.SetActive(true);
+        image.gameObject.SetActive(true);
+
+        player.mouseLookEnabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+
+        yield return new WaitForSecondsRealtime(.025f);
+
+        foreach (Text t in displayText)
+        {
+            t.gameObject.SetActive(true);
+
+            yield return WaitForPlayerInput();
+
+            t.gameObject.SetActive(false);
+        }
+
+        player.mouseLookEnabled = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+
+        image.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
+    }
+
+    public IEnumerator WaitForPlayerInput()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                done = true;
+            }
+            yield return null;
+        }
     }
 
     public void ResetData()

@@ -57,7 +57,7 @@ public class PuzzleThreeRemake : MonoBehaviour
         {
             for (int j = 0; j < 6; j++)
             {
-                fields[i, j] = Instantiate(field, new Vector3(125 + (i * 100f), 175 + (j * 100f), 0), Quaternion.identity, parent);
+                fields[i, j] = Instantiate(field, new Vector3(12555/* + (i * 100f)*/, 17555/* + (j * 100f)*/, 0), Quaternion.identity, parent);
                 fields[i, j].name = "[" + i + "," + j + "]";
                 fields[i, j].x = i;
                 fields[i, j].y = j;
@@ -194,11 +194,11 @@ public class PuzzleThreeRemake : MonoBehaviour
                     break;
                 case MoveOrder.left:
                     currentDir = (currentDir + 3) % 4;
-                    player.transform.Rotate(0, 0, -90);
+                    player.transform.Rotate(0, 0, +90);
                     break;
                 case MoveOrder.right:
                     currentDir = (currentDir + 1) % 4;
-                    player.transform.Rotate(0, 0, 90);
+                    player.transform.Rotate(0, 0, -90);
                     break;
             }
             if (currentX > 13 || currentX < 0 || currentY > 5 || currentY < 0 || !fields[currentX, currentY].canAccess)
