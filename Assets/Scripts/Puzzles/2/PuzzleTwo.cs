@@ -23,6 +23,7 @@ public class PuzzleTwo : MonoBehaviour
     static FieldBlock[,] field = new FieldBlock[5, 5];
     static Text text;
     static int placeableQueens = 5;
+    static bool canPlace = true;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class PuzzleTwo : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 field[i, j] = Instantiate(fieldBlock, new Vector3(740 + 260 + (i * 110f), 550 - 116 + (j * 110f), 0), Quaternion.identity, parent);
+                field[i, j].GetComponent<Image>().color = Color.white;
                 field[i, j].name = "[" + i + "," + j + "]";
                 field[i, j].x = i;
                 field[i, j].y = j;
@@ -56,19 +58,22 @@ public class PuzzleTwo : MonoBehaviour
 
     public static void PlaceQueen(int x, int y)
     {
-        if (field[x, y].queenPlaced)
+        if (canPlace)
         {
-            field[x, y].GetComponent<Image>().color = Color.white;
-            field[x, y].queenPlaced = false;
-            placeableQueens++;
-            UpdateLabel();
-        }
-        else if (placeableQueens > 0)
-        {
-            field[x, y].GetComponent<Image>().color = Color.black;
-            field[x, y].queenPlaced = true;
-            placeableQueens--;
-            UpdateLabel();
+            if (field[x, y].queenPlaced)
+            {
+                field[x, y].GetComponent<Image>().color = Color.white;
+                field[x, y].queenPlaced = false;
+                placeableQueens++;
+                UpdateLabel();
+            }
+            else if (placeableQueens > 0)
+            {
+                field[x, y].GetComponent<Image>().color = Color.black;
+                field[x, y].queenPlaced = true;
+                placeableQueens--;
+                UpdateLabel();
+            }
         }
     }
 
@@ -79,6 +84,7 @@ public class PuzzleTwo : MonoBehaviour
 
     public void ResetField()
     {
+        canPlace = true;
         foreach (FieldBlock f in field)
         {
             f.GetComponent<Image>().color = Color.white;
@@ -113,6 +119,7 @@ public class PuzzleTwo : MonoBehaviour
 
     public void CheckAnswer()
     {
+        canPlace = false;
         foreach (FieldBlock f in field)
         {
             f.GetComponent<Image>().color = Color.white;
