@@ -14,8 +14,8 @@ public class BucketOuter : MonoBehaviour
     {
         bucket = transform.parent.GetComponentInChildren<Bucket>();
 
-        Vector3 startScale = new Vector3(0.1f * 7, 0.1f * bucket.capacity, 0.1f * 10);
-        transform.localScale = new Vector3(startScale.x * 1.2f, startScale.y * 1.1f, startScale.z * 1.2f);
+        Vector3 startScale = new Vector3(0.1f * 7, 0.1f * bucket.capacity, 1f);
+        transform.localScale = new Vector3(startScale.x * 1.2f, startScale.y * 1.2f, startScale.z);
         text.text = "/ " + bucket.capacity.ToString();
         selection.gameObject.SetActive(false);
     }

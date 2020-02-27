@@ -40,7 +40,8 @@ public class PuzzleTwo : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                field[i, j] = Instantiate(fieldBlock, new Vector3(740 + 260 + (i * 110f), 550 - 116 + (j * 110f), 0), Quaternion.identity, parent);
+                field[i, j] = Instantiate(fieldBlock, new Vector3(0, 0, 0), Quaternion.identity, parent);
+                field[i, j].transform.localPosition = new Vector3(1050 + (i * 110f * (1920 / Screen.width)), 465 + (j * 110f * (1080 / Screen.height)));
                 field[i, j].GetComponent<Image>().color = Color.white;
                 field[i, j].name = "[" + i + "," + j + "]";
                 field[i, j].x = i;

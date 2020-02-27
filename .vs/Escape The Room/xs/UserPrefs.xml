@@ -1,30 +1,29 @@
 ﻿<Properties StartupConfiguration="{47ED73A4-65A9-486F-F005-819D57ED59A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CameraAspect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/System/Timer.cs">
     <Files>
       <File FileName="Assets/Scripts/Main New/ToggleStateObject.cs" Line="42" Column="1" />
       <File FileName="Assets/Scripts/Main New/PuzzleLoaderObject.cs" />
       <File FileName="Assets/Scripts/Main New/FindItemObject.cs" />
       <File FileName="Assets/Scripts/Main New/DisplayMessageObject.cs" />
       <File FileName="Assets/Scripts/System/Interactor.cs" />
-      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" />
-      <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" />
+      <File FileName="Assets/Scripts/Puzzles/3R/PuzzleThreeRemake.cs" Line="73" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/4/PuzzleFour.cs" Line="37" Column="67" />
       <File FileName="Assets/Scripts/Puzzles/4/PlayField.cs" />
-      <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" />
+      <File FileName="Assets/Scripts/Puzzles/2/PuzzleTwo.cs" Line="44" Column="113" />
       <File FileName="Assets/Scripts/Puzzles/2/FieldBlock.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/Bucket.cs" />
+      <File FileName="Assets/Scripts/Puzzles/1/PuzzleOne.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Puzzles/1/Bucket.cs" Line="42" Column="63" />
       <File FileName="Assets/Scripts/Puzzles/3R/Area.cs" />
       <File FileName="Assets/Scripts/Puzzles/ClickableField.cs" />
-      <File FileName="Assets/Scripts/System/PlayerData.cs" />
+      <File FileName="Assets/Scripts/System/PlayerData.cs" Line="17" Column="1" />
       <File FileName="Assets/Scripts/Puzzles/5/PuzzleFive.cs" />
       <File FileName="Assets/Scripts/System/PauseMenu.cs" />
       <File FileName="Assets/Scripts/System/GameLoaderEndgame.cs" />
       <File FileName="Assets/Scripts/System/PauseEventHandler.cs" />
       <File FileName="Assets/Scripts/System/GameLoader.cs" />
       <File FileName="Assets/Scripts/System/ClickableInformationField.cs" />
-      <File FileName="Assets/Scripts/Puzzles/1/BucketOuter.cs" />
-      <File FileName="Assets/Scripts/System/Timer.cs" Line="35" Column="16" />
-      <File FileName="Assets/CameraAspect.cs" Line="50" Column="6" />
+      <File FileName="Assets/Scripts/Puzzles/1/BucketOuter.cs" Line="18" Column="83" />
+      <File FileName="Assets/Scripts/System/Timer.cs" Line="51" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,9 +39,10 @@
                   <Node name="4" expanded="True" />
                   <Node name="5" expanded="True" />
                 </Node>
-                <Node name="System" expanded="True" />
+                <Node name="System" expanded="True">
+                  <Node name="Timer.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="CameraAspect.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -52,7 +52,7 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a06550c2-c43d-4fd0-a832-fa8f150d0c78" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ac1e3d20-8e9b-4ebe-a32a-14e54938b516" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

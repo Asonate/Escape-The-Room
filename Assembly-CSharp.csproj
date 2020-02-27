@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\AssetStoreOriginals\SnapsArtOffice\Scripts\LightmappedLOD.cs" />
     <Compile Include="Assets\AssetStoreOriginals\SnapsArtOffice\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\CameraAspect.cs" />
     <Compile Include="Assets\Scripts\Main New\DisplayMessageObject.cs" />
     <Compile Include="Assets\Scripts\Main New\FindItemObject.cs" />
     <Compile Include="Assets\Scripts\Main New\InteractionObject.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Scripts\Puzzles\4\PuzzleFour.cs" />
     <Compile Include="Assets\Scripts\Puzzles\5\PuzzleFive.cs" />
     <Compile Include="Assets\Scripts\Puzzles\ClickableField.cs" />
+    <Compile Include="Assets\Scripts\System\CameraAspect.cs" />
     <Compile Include="Assets\Scripts\System\ClickableInformationField.cs" />
     <Compile Include="Assets\Scripts\System\GameLoader.cs" />
     <Compile Include="Assets\Scripts\System\GameLoaderEndgame.cs" />
