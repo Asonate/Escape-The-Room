@@ -87,7 +87,7 @@ public class PuzzleLoaderObject : InteractionObject
             t.gameObject.SetActive(false);
         }
 
-        if (PlayerData.puzzlesCleared[puzzleID] && PlayerData.itemsFound[requiredItem])
+        if (PlayerData.puzzlesCleared[puzzleID] || !PlayerData.itemsFound[requiredItem])
         {
             player.mouseLookEnabled = true;
 

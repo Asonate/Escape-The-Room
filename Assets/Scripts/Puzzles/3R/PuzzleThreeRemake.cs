@@ -141,7 +141,6 @@ public class PuzzleThreeRemake : MonoBehaviour
         {
             Image orderImage = Instantiate(forward, new Vector3(0f, 0f, 0f), Quaternion.identity, parent);
             orderImage.transform.localPosition = new Vector3((225 + (queuePos * 150f)) * (1920 / Screen.width), 830 * (1080 / Screen.height), 0);
-            //Destroy(orderImage.GetComponent<Button>());
             orderImages.Enqueue(orderImage);
             orders.Enqueue(MoveOrder.forward);
             queuePos += .1f;
@@ -154,7 +153,6 @@ public class PuzzleThreeRemake : MonoBehaviour
         {
             Image orderImage = Instantiate(left, new Vector3(0f, 0f, 0f), Quaternion.identity, parent);
             orderImage.transform.localPosition = new Vector3((225 + (queuePos * 150f)) * (1920 / Screen.width), 830 * (1080 / Screen.height), 0);
-            //Destroy(orderImage.GetComponent<Button>());
             orderImages.Enqueue(orderImage);
             orders.Enqueue(MoveOrder.left);
             queuePos += .1f;
@@ -167,7 +165,6 @@ public class PuzzleThreeRemake : MonoBehaviour
         {
             Image orderImage = Instantiate(right, new Vector3(0f, 0f, 0f), Quaternion.identity, parent);
             orderImage.transform.localPosition = new Vector3((225 + (queuePos * 150f)) * (1920 / Screen.width), 830 * (1080 / Screen.height), 0);
-            //Destroy(orderImage.GetComponent<Button>());
             orderImages.Enqueue(orderImage);
             orders.Enqueue(MoveOrder.right);
             queuePos += .1f;
