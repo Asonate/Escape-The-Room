@@ -45053,8 +45053,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sieht so aus als w\xE4rst du hier eingesperrt. Durchsuche den Raum und
-    entkomme!"
+  m_Text: "Du bist hier eingesperrt. Durchsuche den Raum und entkomme, bevor die Zeit
+    abl\xE4uft!"
 --- !u!222 &2137094108
 CanvasRenderer:
   m_ObjectHideFlags: 0
